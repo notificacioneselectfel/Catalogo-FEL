@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (http://www.altova.com) by chejo (test) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cesp="http://www.sat.gob.gt/face2/ComplementoEspectaculos/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoEspectaculos/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Espectaculos">
+		<xs:annotation>
+			<xs:documentation>Definición Global de complemento de espectaculos publicos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CodigoEvento" minOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="10"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NombreEvento" minOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="256"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NombreLocalidad" minOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="256"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="PrecioAdmision" type="cesp:NonNegativeFloat" minOccurs="1"/>
+				<xs:element name="NumeroBoleto" minOccurs="1">
+								<xs:simpleType>
+									<xs:restriction base="xs:int">
+										<xs:totalDigits value="10"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="cesp:VersionType" use="required" fixed="1"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="VersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,3}">
+				<xs:annotation>
+					<xs:documentation>por ejemplo. x , donde x  es  numero entero de 0 a 999</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonNegativeFloat">
+		<xs:annotation>
+			<xs:documentation>Acepta cantidades mayores a 0</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:float">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+</xs:schema>

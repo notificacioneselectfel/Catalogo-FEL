@@ -1,0 +1,556 @@
+{
+  "cabecera": {
+    "Nombre": "FEL-CATALOGO-FRASES",
+    "Ultima Actualizacion": "08/08/2022 10:00:00"
+  },
+  "contenido": {
+    "tiposFrases": [
+      {
+        "codigoTipoFrase": 1,
+        "nombre": "Frase de retención del ISR",
+        "descripcion": "Indica el régimen al que se encuentra inscrito el EMISOR para que el RECEPTOR sepa si debe efectuarle o no la respectiva retención. Estas frases deben venir atómicamente del Registro Tributario Unificado según la afiliación de ISR que tenga el Emisor.",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Afiliado al ISR Régimen Sobre las Utilidades de Actividades Lucrativas.",
+            "retenerISR": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Sujeto a pagos trimestrales ISR"
+          },
+          {
+            "codigoEscenario": 2,
+            "escenario": "Afiliado al ISR Régimen Opcional Simplificado Sobre Ingresos de Actividades Lucrativas (y NO cuenta con una Resolución de la SAT que le permitiría hacer el pago directo y le evitaría ser objeto de retención)",
+            "retenerISR": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Sujeto a retención definitiva ISR"
+          },
+          {
+            "codigoEscenario": 3,
+            "escenario": "Afiliado al ISR Régimen Opcional Simplificado Sobre Ingresos de Actividades Lucrativas (y SÍ cuenta con una Resolución de la SAT que le permite hacer el pago directo y le evita ser objeto de retención)",
+            "retenerISR": false,
+      "contieneResolucion": true,
+      "contieneFechaResolucion": true,
+            "textoAColocar": "Sujeto a pago directo ISR "
+          },
+      {
+            "codigoEscenario": 4,
+            "escenario": "Exento del ISR",
+            "retenerISR": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exento del ISR "
+          }
+        ]
+      },
+      {
+        "codigoTipoFrase": 2,
+        "nombre": "Frases de Agente de retención del IVA",
+        "descripcion": "Indica si el EMISOR es Agente de Retención del IVA. Si el RECEPTOR también lo es sabrá que no debe efectuar la respectiva retención. Esta frase debe venir atómicamente del Registro Tributario Unificado según la calidad de AGENTE DE RETENCIÓN que tenga el Emisor.",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Es Agente de Retención del IVA",
+            "esAgenteRetenedor": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Agente de Retención del IVA"
+          }
+        ]
+      },
+      {
+        "codigoTipoFrase": 3,
+        "nombre": "Frase de no genera derecho a crédito fiscal del IVA",
+        "descripcion": "Cuando el emisor se encuentre afiliado al régimen de pequeño contribuyente, para que el receptor sepa que la factura no genera derecho a crédito fiscal. Esta frase debe venir atómicamente del Registro Tributario Unificado según la afiliación del IVA que tenga el Emisor.",
+
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "El contribuyente está afiliado al IVA,  en cualquiera de estos regimenes: Pequeño contribuyente, Contribuyente Agropeguario, Pequeño contribuyente Régimen Electrónico, Contribuyente Agropecuario Régimen Electrónico Especial",
+            "esPequenoContribuyente": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "No genera derecho a crédito fiscal"
+          }
+        ]
+      },
+      {
+        "codigoTipoFrase": 4,
+        "nombre": "Frase de exento o no afecto al IVA",
+        "descripcion": "Existen facturas que por diferentes motivos: a) NO deben incluir IVA. b) Deben incluir la base legal por la cual no incluyen el IVA (art. 11 Reglamento de la Ley del IVA y art. 29 literal “a” Ley del IVA).",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Exportaciones. Cuando el vendedor exporta bienes o servicios.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exportaciones. Exenta del IVA (art. 7 núm. 2 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 2,
+            "escenario": "Servicios que presten las instituciones fiscalizadas por la Superintendencia de Bancos y las bolsas de valores autorizadas para operar en el país.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Servicios que presten las instituciones fiscalizadas por la SIB. Exenta del IVA (art. 7 núm. 4 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 3,
+            "escenario": "Ventas de cooperativas. Cuando una cooperativa le vende bienes o servicios a sus asociados, cooperativas, federaciones, centrales de servicios y confederaciones de cooperativas.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Ventas de cooperativas. Exenta del IVA (art. 7 núm. 5 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 4,
+            "escenario": "Donaciones a asociaciones, fundaciones e instituciones, educativas, culturales de asistencia o de servicio social y las religiosas no lucrativas.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Aportes y donaciones. Exenta del IVA (art.  7 núm. 9 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 5,
+            "escenario": "Pagos por el derecho de ser miembro y las cuotas periódicas a las asociaciones o instituciones sociales, gremiales, culturales, científicas, educativas y deportivas, así como a los colegios de profesionales y los partidos políticos.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Cuotas periódicas a asociaciones o instituciones sociales. Exenta del IVA (art. 7 núm. 10 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 6,
+            "escenario": "Servicios exentos que prestan las asociaciones, fundaciones e instituciones educativas, de asistencia o de servicio social y las religiosas, y otras",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Servicios exentos. Exenta del IVA (art. 7 núm. 13 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 7,
+            "escenario": "Venta de activos de Bancos o Sociedades Financieras a las que la Superintendencia de Bancos haya aprobado un plan de regulación o en que exista Junta de Exclusión de activos y pasivos, cuando se transfieran a otros Bancos o sociedades financieras, previa autorización de la Junta Monetaria. Esta exención tendrá validez siempre que la operación no sea para eludir responsabilidades civiles, penales, o de otra naturaleza.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Venta de activos de Bancos. Exenta del IVA (art. 7 núm. 14 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 8,
+            "escenario": "Servicios exentos centros educativos privados en lo que respecta a la matrícula de inscripción, colegiaturas y derechos de examen, de los cursos que tengan autorizados por la autoridad competente.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Cuotas centros educativos. Exenta del IVA (art. 8 núm. 1 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 9,
+            "escenario": "Medicamentos. Cuando una compañía farmacéutica le vende medicamentos genéricos o antirretrovirales a determinados pacientes.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Medicamentos genéricos o antirretrovirales. Exenta del IVA (art. 7 núm. 15 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 10,
+            "escenario": "Vehículos: Cuando se vende un vehículo terrestre del modelo de dos o más años anteriores al del año en curso.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Vehículos. Esta factura no incluye IVA (art. 55 Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 11,
+            "escenario": "Ventas maquilas. Cuando el vendedor vende bienes o servicios de producción local a empresas calificadas bajo el decreto 29-89. Base legal: artículo 12 bis literal g del decreto 29-89 Ley de Maquila; artículo 11 del Acuerdo Gubernativo 5-2013 Reglamento de la Ley del IVA. Operaciones específicas de maquilas, usuarios de zonas francas y coexportadores. Para los casos de ventas no afectas al IVA que pueden darse entre estos actores. Base legal: artículo 36 bis y 36 ter del Decreto 29-89, Ley de Fomento a la Actividad Exportadora y de Maquila.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Operaciones específicas de maquilas. No afecta al IVA (Decreto 29-89 Ley de Maquila)"
+          },
+          {
+            "codigoEscenario": 12,
+            "escenario": "Ventas zonas francas. Cuando el vendedor vende bienes o servicios de producción local a empresas calificadas bajo el decreto 65-89. Base legal: artículo 22 bis literal e del decreto 29-89 Ley de Zonas Francas. Ventas de zonas francas. Por transferencias de mercancías que se realicen dentro y entre zonas francas. Base legal: artículo 22 literal c del Decreto 65-89 Ley de Zonas Francas",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Ventas de zonas francas. No afecta al IVA (Decreto 65-89 Ley de Zonas Francas)"
+          },
+      {
+            "codigoEscenario": 13,
+            "escenario": "Venta de vivienda: Cuando la vivienda no exceda los límites de medición y valor que contempla la ley del Impuesto al Valor Agregado; así como las segundas y subsiguientes transferencias de dominio de viviendas por cualquier título, que tributen conforme la Ley del Impuesto de Timbres Fiscales.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Venta de vivienda. Exenta del IVA (art. 7 núm. 12,  Ley del IVA)"
+          },      
+      {
+            "codigoEscenario": 14,
+            "escenario": "Venta de títulos y acciones. La creación, emisión, circulación y transferencia de títulos de crédito, títulos valores y acciones de cualquier clase, exceptuando la factura cambiaria, cuando la emisión, aceptación o negociación corresponda a actos gravados por la presente ley.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Venta de títulos y acciones. Exenta del IVA (art. 7 núm. 6 Ley del IVA)"
+          },
+
+      {
+            "codigoEscenario": 15,
+            "escenario": "Venta al menudeo en mercados. La venta al menudeo de carnes, pescado, mariscos, frutas y verduras frescas, cereales. legumbres y granos básicos a consumidores finales en mercados cantonales y municipales, siempre que tales ventas no excedan de cien quetzales (Q. 100.00) por cada transacción.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Venta al menudeo en mercados. Exenta del IVA (art. 7 núm. 11 Ley del IVA)"
+          },
+      {
+            "codigoEscenario": 16,
+            "escenario": "Ventas y servicios universidades. Las universidades autorizadas para funcionar en el país.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Ventas y servicios universidades. Exenta del IVA (art. 8 núm. 2 Ley del IVA)"
+          },
+      {
+            "codigoEscenario": 17,
+            "escenario": "Ventas Usuarios Zolic. Los usuarios que se instalen y operen dentro de la Zona Libre gozarán de exención al Impuesto al Valor Agregado por los hechos y actos gravados realizados dentro de la Zona Libre.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Ventas Zolic. Exenta del IVA (art. 32 literal c Ley Orgánica Zolic)"
+          },
+      {
+            "codigoEscenario": 18,
+            "escenario": "Ventas a exentos con resolución específica. Cuando se efectué una venta a contribuyentes que cuentan con resoluciones específicas de exención al IVA, (por ejemplo ventas en aeropuertos).",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Ventas a exentos con resolución específica. (Contribuyentes con resoluciones específicas de exención al IVA)"
+          },
+      {
+            "codigoEscenario": 19,
+            "escenario": "Faltante de inventario de bienes perecederos, casos fortuitos, de fuerza mayor o delitos. Cuando se facture faltante de inventario que no corresponden al hecho generador del IVA, es decir cuando ocurra por bienes perecederos, casos fortuitos, de fuerza mayor o delitos contra el patrimonio.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 3 num. 7 Ley del IVA)"
+          },
+      {
+            "codigoEscenario": 20,
+            "escenario": "Aportes sociedades de emprendimiento.  Cuando una persona individual o jurídica realice aportes a las sociedades de emprendiemiento.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Aportes (art. 35 Ley de Fortalecimiento al Emprendimiento)"
+          },
+          {
+            "codigoEscenario": 21,
+            "escenario": "Otros cargos, impuestos y/o tasas a otros países, no sujetos a IVA. Cuando se incluyan en el boleto aéreo cargos, o impuestos y/o tasas para otros países, no sujetos a IVA.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Cargos e impuestos no sujetos a IVA (Aerolíneas)"
+          },
+          {
+            "codigoEscenario": 22,
+            "escenario": "Las notas de débito y crédito no deben incluir IVA cuando el documento origen al que hacen referencia tampoco lo incluye.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Factura origen no incluye IVA"
+          },
+          {
+            "codigoEscenario": 23,
+            "escenario": "La transferencia de dominio de bienes muebles, cuando el emisor del documento efectúe la aportación de bienes muebles a sociedades mercantiles.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Transferencia de dominio de bienes muebles. Exenta del IVA (art. 7, numeral 3, literal c, Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 24,
+            "escenario": "Servicios no afectos, cuando el servicio es prestado fuera del territorio nacional y no se en enmarca en el hecho generador del impuesto establecido en el artículo 3 y las exenciones según los artículos 7 y 8 del Decreto número 27-92 de la Ley del IVA.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Servicios no afectos. No afecto al IVA (Fuera del hecho generador art. 3, 7 y 8, Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 25,
+            "escenario": "Ventas Zolic. Para el cumplimiento de sus fines, la institución gozará de la exención de impuestos, derechos y arbitrios fiscales o municipales, establecidos o que se establezcan.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 31 Dec. 22-73 Let Orgánica Zolic)"
+          },
+          {
+            "codigoEscenario": 26,
+            "escenario": "Boletos aéreos para beneficiarios del Dec. 31-2022. Está exenta de IVA la compra de boletos aéreos que sean adquiridos exclusivamente para las personas que trabajen fuera del territorio de guatemalteco contratados por empleadores extranjeros con el apoyo del Ministerio de Trabajo y Previsión Social, o por medio de un reclutador debidamente registrado en el Ministerio de Trabajo y Previsión Social.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 4 Dec. 31-2022 Ley de Fom. del Trab. Temp. en el Extranjero)"
+          },
+          {
+            "codigoEscenario": 27,
+            "escenario": "Primera venta vehículo eléctrico, motocicleta eléctrica o impulsado por hidrógeno.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 7 literal “a” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 28,
+            "escenario": "Primera venta vehículo eléctrico, motocicleta eléctrica, vehículo híbrido o impulsado por hidrógeno pesado o especial.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 7 literal “c” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 29,
+            "escenario": "Primera venta teleférico, funicular, tren eléctrico, tren ligero, tranvía o trolebús.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 7 literal “d” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 30,
+            "escenario": "Servicio de transporte público y transporte colectivo a través de vehículo eléctrico, vehículo híbrido, vehículo impulsado por hidrógeno y sistema de transporte eléctrico.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 7 literal “g” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 31,
+            "escenario": "Primera venta de componentes específicos del vehículo eléctrico, motocicleta eléctrica, sistema de transporte eléctrico o vehículo impulsado por hidrógeno, de cargador para vehículo o motocicleta eléctricos.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 7 literal “h” o “i” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 32,
+            "escenario": "Contratos Leasing Dec. 2-2021 por Arrendadadoras relacionados a vehículos eléctricos, vehículo de hidrógeno, sistemas de transporte eléctrico teleférico, funicular, tren eléctrico, tren ligero, tranvía o trolebús, cargador para vehículo eléctrico y de hidrógeno, motor eléctrico para vehículo eléctrico y de hidrógeno, batería para motor eléctrico y de hidrógeno.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 8 Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          }
+
+
+        ]
+      },         
+    {
+        "codigoTipoFrase": 5,
+        "nombre": "Frase de facturas especiales",
+        "descripcion": "En las compras en las que el emisor o prestador del servicio se niegue a emitir la factura correspondiente.",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Se incluirá la frase al DTE de tipo Factura Especial en las compras en las que el contribuyente emisor o prestador del servicio se niegue a emitir la factura correspondiente.",
+            "esPequenoContribuyente": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "El vendedor o prestador del servicio se negó a emitir la factura correspondiente. (art. 52 Ley del IVA)"
+          },
+           {
+            "codigoEscenario": 2,
+            "escenario": "Se incluirá la frase al DTE de tipo Factura Especial en las compras en las que el vendedor o prestador del servicio sea un “no residente”, para incluir únicamente la retención del IVA y no la del ISR, ya que para el ISR debe realizarlo por medio de las tarifas de retención establecidas en el Decreto 10-2012,  las cuales están en los respectivos formularios de declaraguate.",
+            "esPequenoContribuyente": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Solo incluye retención IVA, el vendedor o prestador del servicio es “no residente”"
+          }
+        ]
+      },
+    
+    
+    
+     {
+        "codigoTipoFrase": 6,
+        "nombre": "Frases de contribuyente agropecuario",
+        "descripcion": "Cuando el emisor se encuentre afiliado al régimen especial de contribuyente agropecuario, para que el receptor sepa cuando no debe efectuarle retención. Esta frase debe venir automáticamente del Registro Tributario Unificado basada en la afiliación del IVA del Emisor.  Artículo 54 “A” Ley del IVA.",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "El contribuyente está afiliado al IVA  en el Régimen Especial de Contribuyente Agropeguario y su forma de pago del impuesto es el 5% sobre las ventas brutas.",
+            "esAgropecuario": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Con forma de pago sobre las ventas brutas"
+          },
+      {
+            "codigoEscenario": 2,
+            "escenario": "El contribuyente está afiliado al IVA en el Régimen Especial de Contribuyente Agropecuario y su forma de pago del impuesto es el 5% sobre las utilidades.",
+            "esAgropecuario": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Con forma de pago sobre las utilidades, no retener"
+          }
+        ]
+      },
+    
+    {
+        "codigoTipoFrase": 7,
+        "nombre": "Frases de regímenes electrónicos",
+        "descripcion": "Cuando el emisor se encuentre afiliado al régimen electrónico especial de pequeño contribuyente o  contribuyente agropecuario, para que el receptor sepa que no debe efectuarle retención. Esta frase debe venir automáticamente del Registro Tributario Unificado basada en la afiliación del IVA del Emisor.  Artículo 54 “E” Ley del IVA.",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "El contribuyente está afiliado al IVA en el Régimen electrónico de pequeño contribuyente.",
+            "esRegimenElectronico": true,
+      "contieneResolucion": true,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "No retener, "
+          },
+      {
+            "codigoEscenario": 2,
+            "escenario": "El contribuyente está afiliado al IVA en el Régimen electrónico especial de contribuyente agropeguario.",
+            "esRegimenElectronico": true,
+      "contieneResolucion": true,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "No retener, "
+          }
+        ]
+      },
+    
+    
+    
+    
+     {
+        "codigoTipoFrase": 8,
+        "nombre": "Frases de Exento de ISR ",
+        "descripcion": "Cuando el emisor se encuentra exento del Impuesto Sobre la Renta (ISR).",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Exenciones generales universidades. Las universidades legalmente autorizadas para funcionar en el país.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenciones generales universidades. Exenta del ISR (art. 8 núm. 2 Ley de Actualización Tributaria)"
+          },
+      {
+            "codigoEscenario": 2,
+            "escenario": "Exenciones generales centros educativos privados. Los centros educativos privados, como centros de cultura, exclusivamente en las rentas derivadas de: matrícula de inscripción, colegiaturas y derechos de examen, por los cursos que tengan autorizados por la autoridad competente.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenciones generales centros educativos privados. Exenta del ISR (art. 8 núm. 3 Ley de Actualización Tributaria)"
+          },
+       {
+            "codigoEscenario": 3,
+            "escenario": "Exenciones generales iglesias. Exclusivamente por razón de culto.",
+            "esRegimenElectronico": true,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenciones generales iglesias. Exenta del ISR (art. 8 núm. 5 Ley de Actualización Tributaria)"
+          },
+       {
+            "codigoEscenario": 4,
+            "escenario": "Exenciones Rentas de Actividades Lucrativas entes no lucrativos.  Las rentas que obtengan los entes que destinen exclusivamente a los fines no lucrativos de su creación y en ningún caso distribuyan, directa o indirectamente, utilidades o bienes entre sus integrantes, tales como: los colegios profesionales; los partidos políticos; los comités cívicos; las asociaciones o fundaciones no lucrativas legalmente autorizadas e inscritas como exentas ante la Administración Tributaria, que tengan por objeto la beneficencia, asistencia o el servicio social, actividades culturales, científicas de educación e instrucción, artísticas, literarias, deportivas, políticas, sindicales, gremiales, religiosas, o el desarrollo de comunidades indígenas; únicamente por la parte que provenga de donaciones o cuotas ordinarias o extraordinarias.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenciones Rentas de Actividades Lucrativas entes no lucrativos.  Exenta del ISR (art. 11 núm. 1 Ley de Actualización Tributaria)"
+          },
+       {
+            "codigoEscenario": 5,
+            "escenario": "Exenciones Rentas de Actividades Lucrativas cooperativas.  Las rentas de las cooperativas legalmente constituidas en el país, provenientes de las transacciones con sus asociados y con otras cooperativas, federaciones y confederaciones de cooperativas.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenciones Rentas de Actividades Lucrativas cooperativas.  Exenta del ISR (art. 11 núm. 2 Ley de Actualización Tributaria)"
+          },
+       {
+            "codigoEscenario": 6,
+            "escenario": "Exenta ISR Zolic. Para el cumplimiento de sus fines, la institución gozará de la exención de impuestos, derechos y arbitrios fiscales o municipales,  establecidos o que se establezcan",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (art. 31 Ley Orgánica Zolic)"
+          },
+       {
+            "codigoEscenario": 7,
+            "escenario": "Exenta ISR Usuarios Zolic. Los usuarios que se instalen y operen dentro de la Zona Libre gozarán de exención del ISR por 10 años a partir de la fecha en que la empresa inicie sus operaciones dentro de la  Zona Libre.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (art. 32 litar a, Ley Orgánica Zolic)"
+          },
+       {
+            "codigoEscenario": 8,
+            "escenario": "Exenciones generales entidades del Estado. Los organismos del Estado y sus entidades descentralizadas, autónomas, las municipalidades y sus empresas.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (art. 8 núm. 1 Ley de Actualización Tributaria)"
+          },
+       {
+            "codigoEscenario": 9,
+            "escenario": "Exención por servicio de carga eléctrica a otros tipos de vehículos y transporte. Servicio de carga para vehículos eléctricos, hidrógeno y sistema de ransporte eléctrico.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (Art. 4, literal b), numeral ii, Dec. 40-2022, Ley Inc. Mov. Eléctrica)"
+          },
+       {
+            "codigoEscenario": 10,
+            "escenario": "Exención por servicios de ensamblaje y/o producción a otros vehículos y transporte. Renta generada por ensamblaje y/o producción de vehículos hibridos, motocicleta eléctrica, vehículo impulsado por hidrógeno y sistema de transporte eléctrico.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (Art. 7, literal f, Dec. 40-2022, Ley Inc. Mov. Eléctrica)"
+          },
+       {
+            "codigoEscenario": 11,
+            "escenario": "Exención a servicios de transporte público y colectivo. Prestación de servicios de transporte público y transporte colectivo a través de vehículos eléctricos, híbridos, impulsados por hidrógeno y sistema de transporte eléctrico..",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del ISR (Art. 7, literal g, Dec. 40-2022, Ley Inc. Mov. Eléctrica)"
+          }
+        ]
+      },
+
+      {
+        "codigoTipoFrase": 9,
+        "nombre": "Frases Especiales",
+        "descripcion": "Cuando el emisor efectúe operaciones especificas como por ejemplo el apoyo social al Gas",
+        "frases": [
+          {
+            "codigoEscenario": 1,
+            "escenario": "Decreto 17-2022 Las empresas envasadoras de Gas Propano deberán incluir la frase correspondiente al subsidio.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Esta factura incluye apoyo social temporal al precio del gas licuado envasado en cilindros portátiles (Dto. 17-2022)"
+          },
+          {
+            "codigoEscenario": 2,
+            "escenario": "Decreto 20-2022 Las empresas importadoras de derivados de petroléo al vender Diésel o Gasolina Regular deberán de incluir dicha frase.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "ESTA FACTURA INCLUYE APOYO SOCIAL TEMPORAL DECRETO 42-2022 POR UN VALOR DE GTQ "
+          },
+          {
+            "codigoEscenario": 3,
+            "escenario": "Decreto 20-2022 Las empresas importadoras de derivados de petroléo al vender Diésel o Gasolina Regular y Gasolina Super deberán de incluir dicha frase.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "MONTO TOTAL A PAGAR SIN APOYO SOCIAL GTQ "
+          },
+          {
+            "codigoEscenario": 4,
+            "escenario": "Impuesto de Salida Vía Aérea, cuando corresponda a personas guatemaltecas que laboren para empleadores en el extranjero con registro de contratos en el Ministerio de Trabajo Exento (art. 4 Ley del Fomento del Trabajo Temporal en el Extranjero y Previsión Social.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta Impuesto Salida Vía Aérea (art. 4 Dec. 31-2022 Ley de Fom. del Trab. Temp. en el Extranjero)"
+          },
+          {
+            "codigoEscenario": 5,
+            "escenario": "Decreto 45-2022 Las empresas envasadoras de Gas Propano deberán incluir la frase correspondiente al subsidio.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Esta factura incluye apoyo social temporal al precio del gas licuado envasado en cilindros portátiles (Dto. 45-2022)"
+          }
+        ]
+      }
+    ]
+  }
+}

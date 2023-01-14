@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:crc="http://www.sat.gob.gt/face2/ComplementoReferenciaConstancia/0.1.0"
+	targetNamespace="http://www.sat.gob.gt/face2/ComplementoReferenciaConstancia/0.1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ReferenciasConstancia">
+		<xs:annotation>
+			<xs:documentation>Agrupa la informacion del documento original al cual hace referencia esta Nota (Debito/Credito)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la version de este complemento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="RegimenAntiguo">
+				<xs:annotation>
+					<xs:documentation>Indica si la constancia se aplica a un DTE del Régimen FEL (no se incluye la casilla) o bien a uno antiguo (facturas de papel), éste último si incluye la casilla con el valor “Antiguo”.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Antiguo"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NumeroAutorizacionDocumentoOrigen" use="required">
+				<xs:annotation>
+					<xs:documentation>Describe el número de autorización del documento original, al que se le aplica la constancia que se está emitiendo.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:whiteSpace value="collapse"/>
+						<xs:pattern
+							value="[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}|([2]{1}[0-9]{3}-[1-9]{1}[0-9]{0,2}-[1-9]{1}[0-9]{0,6}-[1-9]{1}[0-9]{0,6})"
+						/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="FechaEmisionDocumentoOrigen" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Fecha de emisión del documento al cual se le está aplicando la constancia. 
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="SerieDocumentoOrigen">
+				<xs:annotation>
+					<xs:documentation>Serie del documento al cual se le emite la constancia, cuando corresponde a un documento antiguo. *Se incluye la casilla, sólo si se hace referencia a un documento del Régimen Antiguo.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="20"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NumeroDocumentoOrigen">
+				<xs:annotation>
+					<xs:documentation>Número del documento al cual se le emite la constancia, cuando corresponde a un documento antiguo. *Se incluye la casilla, sólo si se hace referencia a un documento del Régimen Antiguo.</xs:documentation>
+				</xs:annotation>
+            </xs:attribute>
+
+            <xs:attribute name="MontoIVAExento">
+				<xs:annotation>
+					<xs:documentation>El monto total del IVA que ampara el documento, cuando el complemento corresponde a una Constancia de Exención del IVA (CIVA). Dicho monto debe ser igual al total de IVA del DTE al que se hace referencia.</xs:documentation>
+                </xs:annotation>
+            	<xs:simpleType>
+                <xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:fractionDigits value="10"/>
+			<xs:totalDigits value="22"/>
+                </xs:restriction>
+            		</xs:simpleType>
+            </xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

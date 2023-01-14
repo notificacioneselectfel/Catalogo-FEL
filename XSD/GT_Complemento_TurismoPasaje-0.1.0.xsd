@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ctup="http://www.sat.gob.gt/face2/ComplementoTurismoPasaje/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoTurismoPasaje/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="TurismoPasaje">
+		<xs:annotation>
+			<xs:documentation>Aplica para los DTE que incluyen exención de IVA e Impuesto de Turismo Pasajes derivado del Decreto 31-2022.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="NitReclutadora" minOccurs="0">
+					<xs:simpleType>
+					<xs:annotation>
+						<xs:documentation>Nit del receptor del DTE.</xs:documentation>
+					</xs:annotation>
+						<xs:restriction base="xs:string">
+						<xs:maxLength value="13"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="CuiBeneficiario" minOccurs="0">
+					<xs:simpleType>
+					<xs:annotation>
+						<xs:documentation>El CUI del contribuyente que está viajando.</xs:documentation>
+					</xs:annotation>
+					<xs:restriction base="xs:string">
+					<xs:pattern value="([0-9]{4}[0-9]{5}[0-9]{4})"/>
+						<xs:maxLength value="13"/>
+					</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+
+				<xs:element name="NombreBeneficiario" minOccurs="0">
+					<xs:simpleType>
+					<xs:annotation>
+						<xs:documentation>El número del documento relacionado con la transacción.</xs:documentation>
+					</xs:annotation>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="50"/>
+					</xs:restriction>
+					</xs:simpleType>
+					</xs:element>
+
+				<xs:element name="FechaViaje" minOccurs="0">
+					<xs:simpleType>
+					<xs:annotation>
+						<xs:documentation>La fecha del documento relacionado con la transacción.</xs:documentation>
+					</xs:annotation>
+					<xs:restriction base="xs:date">
+						<xs:pattern value="((\d{4})-(\d{2})-(\d{2}))"/>
+					</xs:restriction>
+					</xs:simpleType>
+					</xs:element>
+
+				<xs:element name="PaisDestino" minOccurs="0">
+					<xs:simpleType>
+					<xs:annotation>
+						<xs:documentation>ISO 3166-1 establece la codificación de las siglas del país.</xs:documentation>
+					</xs:annotation>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="30"/>
+					</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				</xs:sequence>
+			<xs:attribute name="Version" type="ctup:VersionType" fixed="1"></xs:attribute>
+
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="VersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,3}">
+				<xs:annotation>
+					<xs:documentation>por ejemplo. x , donde x  es  numero entero de 0 a 999</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
