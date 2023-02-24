@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:clepp="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="LEPP">
+		<xs:annotation>
+			<xs:documentation>El presente complemento, debe incluirse únicamente en los documentos del tipo: Recibo por donación y Recibo</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="CalidadAportante" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Calidad del aportante.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="clepp:CalidadDelAporteType">
+							<xs:whiteSpace value="collapse"/>
+						</xs:restriction>
+						<!--<xs:restriction base="xs:string">
+							<xs:maxLength value="18"/>
+						</xs:restriction>-->
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="TipoAporte" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Tipo de aporte.</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="clepp:TipoAporteType">
+							<xs:whiteSpace value="collapse"/>
+						</xs:restriction>
+						<!--
+						<xs:restriction base="xs:string">
+                            <xs:maxLength value="90"/>
+						</xs:restriction>-->
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DeclaracionProcedencia" minOccurs="0">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
+						</xs:annotation>
+                        <xs:restriction base="xs:string">
+                            <xs:maxLength value="500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="Aporte" minOccurs="0">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:decimal">
+							<xs:minInclusive value="0"/>
+							<xs:fractionDigits value="6"/>
+							<xs:totalDigits value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="CalidadDelAporteType">
+		<xs:annotation>
+			<xs:documentation>Catálogo Calidad del aporte</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="18"/>
+			<xs:enumeration value="Afiliado"/>
+			<xs:enumeration value="Simpatizante"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TipoAporteType">
+		<xs:annotation>
+			<xs:documentation>Catálogo Tipo de aporte</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="90"/>
+			<xs:enumeration value="Dineraria"/>
+			<xs:enumeration value="No dineraria o en especie"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
