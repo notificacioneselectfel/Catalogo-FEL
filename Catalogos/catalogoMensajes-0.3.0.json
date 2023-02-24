@@ -485,17 +485,17 @@
             "mensaje": "El Tipo de DTE no aplica para este tipo de personería”."
         },
         {
-            "codigo": "FEL_RCP537",
+            "codigo": "FEL_RCP422",
             "validacion": "El tipo de DTE es RECI y la casilla tiene un tipo de personeria diferente al de la lista Tipos de DTE por personeria, y no está dentro de los códigos de establecimientos que permite RECI 2.2.3.1 Clasificación y tipos de establecimiento de personas individuales, que pueden emitir Constancias y recibos.",
             "mensaje": "El Tipo de DTE RECI no aplica para este tipo de personería o código - tipo de establecimiento\""
         },
         {
-            "codigo": "FEL_RCP538",
+            "codigo": "FEL_RCP423",
             "validacion": "El Tipo de DTE es RDON o RECI y la casilla AfiliacionIVA se encuentra vacía y en la casilla Tipo Personería se consigna un valor diferente de 715, 716,718, 719, 720, 721, 723, 724, 725. 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 2635, 2719, 2744",
             "mensaje": "Debe de incluir afiliación al IVA para poder emitir el Tipo de DTE RDON o RECI"
         },
         {
-            "codigo": "FEL_RCP539",
+            "codigo": "FEL_RCP424",
             "validacion": "El valor ingresado debe ser igual al Gran Total este cuando el tipo de aportación sea igual a No Dineraria.",
             "mensaje": "El valor estimado ingresado no puede ser diferente al Gran Total del DTE"
         },
