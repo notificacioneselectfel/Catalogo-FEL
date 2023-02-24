@@ -7,57 +7,61 @@
 			<xs:documentation>El presente complemento, debe incluirse únicamente en los documentos del tipo: Recibo por donación y Recibo</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
-			<xs:sequence>
-				<xs:element name="CalidadAportante" minOccurs="0">
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la version de este complemento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="CalidadAportante" minOccurs="0" use="required">
+				<xs:annotation>
+					<xs:documentation>Calidad del aportante.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="clepp:CalidadDelAporteType">
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+					<!--<xs:restriction base="xs:string">
+						<xs:maxLength value="18"/>
+					</xs:restriction>-->
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TipoAporte" minOccurs="0" use="required">
+				<xs:annotation>
+					<xs:documentation>Tipo de aporte.</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="clepp:TipoAporteType">
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+					<!--
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="90"/>
+					</xs:restriction>-->
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DeclaracionProcedencia" minOccurs="0" use="required">
+				<xs:simpleType>
 					<xs:annotation>
-						<xs:documentation>Calidad del aportante.</xs:documentation>
+						<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
 					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="clepp:CalidadDelAporteType">
-							<xs:whiteSpace value="collapse"/>
-						</xs:restriction>
-						<!--<xs:restriction base="xs:string">
-							<xs:maxLength value="18"/>
-						</xs:restriction>-->
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="TipoAporte" minOccurs="0">
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="500"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Aporte" minOccurs="0" use="required">
+				<xs:simpleType>
 					<xs:annotation>
-						<xs:documentation>Tipo de aporte.</xs:documentation>
+						<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
 					</xs:annotation>
-					<xs:simpleType>
-						<xs:restriction base="clepp:TipoAporteType">
-							<xs:whiteSpace value="collapse"/>
-						</xs:restriction>
-						<!--
-						<xs:restriction base="xs:string">
-                            <xs:maxLength value="90"/>
-						</xs:restriction>-->
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="DeclaracionProcedencia" minOccurs="0">
-					<xs:simpleType>
-						<xs:annotation>
-							<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
-						</xs:annotation>
-                        <xs:restriction base="xs:string">
-                            <xs:maxLength value="500"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="Aporte" minOccurs="0">
-					<xs:simpleType>
-						<xs:annotation>
-							<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
-						</xs:annotation>
-						<xs:restriction base="xs:decimal">
-							<xs:minInclusive value="0"/>
-							<xs:fractionDigits value="6"/>
-							<xs:totalDigits value="50"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-			</xs:sequence>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="0"/>
+						<xs:fractionDigits value="6"/>
+						<xs:totalDigits value="50"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
 		</xs:complexType>
 	</xs:element>
 	<xs:simpleType name="CalidadDelAporteType">
