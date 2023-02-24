@@ -57,7 +57,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="SerieDocumentoOrigen">
+			<xs:attribute name="SerieDocumentoOrigen" use="required">
 				<xs:annotation>
 					<xs:documentation>Numero de Serie correspondiente al regimen de papel o FACE1.</xs:documentation>
 				</xs:annotation>
@@ -69,7 +69,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="NumeroDocumentoOrigen">
+			<xs:attribute name="NumeroDocumentoOrigen" use="required">
 				<xs:annotation>
 					<xs:documentation>Numero de Documento correspondiente al regimen de papel o FACE1.</xs:documentation>
 				</xs:annotation>
