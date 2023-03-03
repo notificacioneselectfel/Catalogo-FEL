@@ -13,7 +13,7 @@
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
-			<xs:attribute name="CalidadAportante" minOccurs="0" use="required">
+			<xs:attribute name="CalidadAportante" use="required">
 				<xs:annotation>
 					<xs:documentation>Calidad del aportante.</xs:documentation>
 				</xs:annotation>
@@ -26,7 +26,7 @@
 					</xs:restriction>-->
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="TipoAporte" minOccurs="0" use="required">
+			<xs:attribute name="TipoAporte" use="required">
 				<xs:annotation>
 					<xs:documentation>Tipo de aporte.</xs:documentation>
 				</xs:annotation>
@@ -40,7 +40,7 @@
 					</xs:restriction>-->
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="DeclaracionProcedencia" minOccurs="0" use="required">
+			<xs:attribute name="DeclaracionProcedencia" use="required">
 				<xs:simpleType>
 					<xs:annotation>
 						<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
@@ -50,7 +50,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
-			<xs:attribute name="Aporte" minOccurs="0" use="required">
+			<xs:attribute name="Aporte" use="required">
 				<xs:simpleType>
 					<xs:annotation>
 						<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
