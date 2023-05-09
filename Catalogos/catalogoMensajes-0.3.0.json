@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "13/03/2023"
+        "Ultima Actualizacion": "09/05/2023"
     },
     "Contenido": [
         {
@@ -208,6 +208,11 @@
             "codigo": "FEL_RCP331",
             "validacion": "El contenido de esta casilla es diferente al producto (multiplicación) de: • Casilla Monto gravable • Porcentaje sobre el monto gravable, correspondiente al Código de la unidad gravable consignado en el XML.",
             "mensaje": "Monto del Impuesto calculado incorrectamente para el IVA"
+        },
+        {
+            "codigo": "FEL_RCP332",
+            "validacion": "El valor de la casilla “Total de Impuestos” es diferente a la sumatoria de las casillas “Monto del Impuesto”",
+            "mensaje": "El total de Impuesto calculado incorrectamente para el IVA"
         },
         {
             "codigo": "FEL_RCP333",
@@ -598,6 +603,36 @@
             "codigo": "FEL_SEC535",
             "validacion": "Se valida que el contenido de las casillas total no sea mayor o igual al monto indicado cuando se emiten documentos con receptor CF.",
             "mensaje": "Error. El monto total en Q del documento excede el límite permitido para CF."
+        },
+        {
+            "codigo": "FEL_RCP10",
+            "validacion": "El Tipo de DTE enviado es diferente de FACT, FCAM, FPEQ, FCAP, NCRE, NDEB, CIVA, CAIS y se incluye el complemento al item.",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "FEL_GEN104",
+            "validacion": "Almacenamiento del detalle de documento",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "FEL_GEN105",
+            "validacion": "Error en la Validación de documento Emisor y UUID",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "FEL_GEN106",
+            "validacion": "Documento ya existe para el Emisor y el UUID",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "FEL_GEN107",
+            "validacion": "Registro de la constancia",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "FEL_GEN108",
+            "validacion": "Almacenamiento del documento",
+            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
         }
     ]
 }
