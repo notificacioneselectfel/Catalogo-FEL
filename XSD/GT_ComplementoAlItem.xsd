@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:caitem="http://www.sat.gob.gt/face2/ComplementoAlItem/0.1.0" 
+	targetNamespace="http://www.sat.gob.gt/face2/ComplementoAlItem/0.1.0" 
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ComplementoalItem">
+		<xs:annotation>
+			<xs:documentation>El presente complemento es para los complementos al item</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la version de este complemento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="NoItem" use="required">
+				<xs:annotation>
+					<xs:documentation>No. Item: Deberá contener y asociar el número del item al que está haciendo referencia</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:decimal">
+						<xs:minInclusive value="1"/>
+						<xs:totalDigits value="999999"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="CodArancelario" use="required" type="caitem:ContenidoTexto">
+				<xs:annotation>
+					<xs:documentation>Código de arancelario: Codificación del listado provisto por la SAT para poder utilizar.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="Descripcion" use="required" type="caitem:ContenidoTexto">
+				<xs:annotation>
+					<xs:documentation>Descripción: Descripción de la codificación del producto</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ContenidoTexto">
+		<xs:annotation>
+			<xs:documentation>Tipo de dato texto.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:maxLength value="500"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
