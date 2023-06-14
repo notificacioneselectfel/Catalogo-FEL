@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:ctrasmer="http://www.sat.gob.gt/face2/TrasladoMercancías/0.1.0" 
+	targetNamespace="http://www.sat.gob.gt/face2/TrasladoMercancías/0.1.0" 
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="TrasladoMercancias">
+		<xs:annotation>
+			<xs:documentation>El presente complemento es para traslado de Mercancías, Aplica para los documentos electrónicos no tributarios Notas de Envío.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la versión de este complemento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+            <xs:attribute name="IDTransportista" ref="Id del transportista" use="required">
+				<xs:annotation>
+					<xs:documentation>Id de la persona que conduce el transporte el cual traslada la o las mercancías.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="18"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="TipoDocumentoIdentificacion" ref="Tipo de Documento de identificación" use="required" type="ctrasmer:tipoDocumento">
+				<xs:annotation>
+					<xs:documentation>El tipo de documento que registra.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+            <xs:attribute name="NombreTransportista" ref="Nombre transportista" use="required">
+				<xs:annotation>
+					<xs:documentation>Colocará en automático el nombre cuando corresponda a un NIT o CUI y si es extranjero dejará el espacio para colocarlo.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="Placa" ref="Placa" use="required">
+				<xs:annotation>
+					<xs:documentation>Placa del vehículo de transporte.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="10"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="DireccionProcedencia" ref="Dirección de procedencia" use="required">
+				<xs:annotation>
+					<xs:documentation>Dirección de donde proviene la mercancía.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="120"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="NITCUIConsignatario" ref="NIT o CUI consignatario" use="required">
+				<xs:annotation>
+					<xs:documentation>NIT o CUI de la persona hacia donde se dirige la mercancía.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="13"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="NombreConsignatario" ref="Nombre consignatario" use="required">
+				<xs:annotation>
+					<xs:documentation>Colocará en automático el nombre cuando corresponda a un NIT o CUI y si es extranjero dejará el espacio para colocarlo.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="50"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="DireccionDestino" ref="Dirección de destino" use="required">
+				<xs:annotation>
+					<xs:documentation>Dirección hacia donde se dirige la mercancía.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="120"/>
+                </xs:restriction>
+			</xs:attribute>
+            <xs:attribute name="Motivo" ref="Motivo" use="required">
+				<xs:annotation>
+					<xs:documentation>La descripción y motivo por el cual se traslada la mercancía.</xs:documentation>
+				</xs:annotation>
+                <xs:restriction base="xs:string">
+                    <xs:whiteSpace value="collapse"/>
+                    <xs:maxLength value="120"/>
+                </xs:restriction>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+    <xs:simpleType name="tipoDocumento">
+		<xs:annotation>
+			<xs:documentation>Catálogo para tipo de documento</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:enumeration value="CUI"/>
+			<xs:enumeration value="NIT"/>
+			<xs:enumeration value="Extranjero"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
