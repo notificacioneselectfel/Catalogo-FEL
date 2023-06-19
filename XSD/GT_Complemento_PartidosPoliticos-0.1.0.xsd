@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema
-	xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:clepp="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:clepp="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" 
+	targetNamespace="http://www.sat.gob.gt/face2/ComplementoPartidosPolitico/0.1.0" 
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="LEPP">
 		<xs:annotation>
 			<xs:documentation>El presente complemento, debe incluirse únicamente en los documentos del tipo: Recibo por donación y Recibo</xs:documentation>
@@ -21,9 +22,6 @@
 					<xs:restriction base="clepp:CalidadDelAporteType">
 						<xs:whiteSpace value="collapse"/>
 					</xs:restriction>
-					<!--<xs:restriction base="xs:string">
-						<xs:maxLength value="18"/>
-					</xs:restriction>-->
 				</xs:simpleType>
 			</xs:attribute>
 			<xs:attribute name="TipoAporte" use="required">
@@ -34,27 +32,23 @@
 					<xs:restriction base="clepp:TipoAporteType">
 						<xs:whiteSpace value="collapse"/>
 					</xs:restriction>
-					<!--
-					<xs:restriction base="xs:string">
-						<xs:maxLength value="90"/>
-					</xs:restriction>-->
 				</xs:simpleType>
 			</xs:attribute>
 			<xs:attribute name="DeclaracionProcedencia" use="required">
+				<xs:annotation>
+					<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
+				</xs:annotation>
 				<xs:simpleType>
-					<xs:annotation>
-						<xs:documentation>Declaración de la procedencia del aporte</xs:documentation>
-					</xs:annotation>
 					<xs:restriction base="xs:string">
 						<xs:maxLength value="500"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
 			<xs:attribute name="Aporte" use="required">
+				<xs:annotation>
+					<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
+				</xs:annotation>
 				<xs:simpleType>
-					<xs:annotation>
-						<xs:documentation>Valor estimado y justipreciado del aporte.</xs:documentation>
-					</xs:annotation>
 					<xs:restriction base="xs:decimal">
 						<xs:minInclusive value="0"/>
 						<xs:fractionDigits value="6"/>
