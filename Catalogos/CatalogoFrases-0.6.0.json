@@ -1,7 +1,7 @@
 {
   "cabecera": {
     "Nombre": "FEL-CATALOGO-FRASES",
-    "Ultima Actualizacion": "08/08/2022 10:00:00"
+    "Ultima Actualizacion": "04/07/2023 15:00:00"
   },
   "contenido": {
     "tiposFrases": [
@@ -353,14 +353,6 @@
       "contieneResolucion": false,
       "contieneFechaResolucion": false,
             "textoAColocar": "El vendedor o prestador del servicio se negó a emitir la factura correspondiente. (art. 52 Ley del IVA)"
-          },
-           {
-            "codigoEscenario": 2,
-            "escenario": "Se incluirá la frase al DTE de tipo Factura Especial en las compras en las que el vendedor o prestador del servicio sea un “no residente”, para incluir únicamente la retención del IVA y no la del ISR, ya que para el ISR debe realizarlo por medio de las tarifas de retención establecidas en el Decreto 10-2012,  las cuales están en los respectivos formularios de declaraguate.",
-            "esPequenoContribuyente": false,
-      "contieneResolucion": false,
-      "contieneFechaResolucion": false,
-            "textoAColocar": "Solo incluye retención IVA, el vendedor o prestador del servicio es “no residente”"
           }
         ]
       },
@@ -519,7 +511,7 @@
           },
           {
             "codigoEscenario": 2,
-            "escenario": "Decreto 20-2022 Las empresas importadoras de derivados de petroléo al vender Diésel o Gasolina Regular deberán de incluir dicha frase.",
+            "escenario": "Decreto 42-2022 Las empresas importadoras de derivados de petroléo al vender Diésel deberán de incluir dicha frase.",
             "esRegimenElectronico": false,
             "contieneResolucion": false,
             "contieneFechaResolucion": false,
@@ -527,7 +519,7 @@
           },
           {
             "codigoEscenario": 3,
-            "escenario": "Decreto 20-2022 Las empresas importadoras de derivados de petroléo al vender Diésel o Gasolina Regular y Gasolina Super deberán de incluir dicha frase.",
+            "escenario": "Decreto 42-2022 Las empresas importadoras de derivados de petroléo al vender Diésel deberán de incluir dicha frase.",
             "esRegimenElectronico": false,
             "contieneResolucion": false,
             "contieneFechaResolucion": false,
@@ -548,6 +540,46 @@
             "contieneResolucion": false,
             "contieneFechaResolucion": false,
             "textoAColocar": "Esta factura incluye apoyo social temporal al precio del gas licuado envasado en cilindros portátiles (Dto. 45-2022)"
+          },
+          {
+            "codigoEscenario": 6,
+            "escenario": "Decreto 45-2022 Las empresas envasadoras de Gas Propano deberán incluir la frase correspondiente al subsidio.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Esta factura incluye apoyo social temporal al precio del gas licuado envasado en cilindros portátiles (Dto. 45-2022 y sus Reformas)"
+          },
+          {
+            "codigoEscenario": 7,
+            "escenario": "Decreto 5-2023 Las empresas envasadoras de Gas Propano deberán incluir la frase correspondiente al subsidio.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Esta factura incluye apoyo social temporal al precio del gas licuado envasado en cilindros portátiles (Dec. 5-2023)"
+          },
+          {
+            "codigoEscenario": 8,
+            "escenario": "DTE (otros documentos): Cuando el contribuyente emite un documento que respalda el traslado de mercancías de un lugar a otro.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "La emisión de este documento no sustituye una factura."
+          },
+          {
+            "codigoEscenario": 9,
+            "escenario": "DTE (otros documentos): Cuando el contribuyente emite un documento que respalda un pago como anticipo en una operación comercial.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Este documento no constituye Factura Contable ni genera derecho a crédito fiscal del IVA."
+          },
+          {
+            "codigoEscenario": 10,
+            "escenario": "DTE (otros documentos): Cuando el contribuyente emite un documento que respalda un pago como anticipo en una operación comercial.",
+            "esRegimenElectronico": false,
+            "contieneResolucion": false,
+            "contieneFechaResolucion": false,
+            "textoAColocar": "Concluido el servicio, debe emitirse la Factura, conforme la liquidación correspondiente."
           }
         ]
       }
