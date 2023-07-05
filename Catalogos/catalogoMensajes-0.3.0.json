@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "09/05/2023"
+        "Ultima Actualizacion": "05/07/2023"
     },
     "Contenido": [
         {
@@ -490,6 +490,11 @@
             "mensaje": "El Tipo de DTE no aplica para este tipo de personería”."
         },
         {
+            "codigo": "FEL_RCP419",
+            "validacion": "El valor de la casilla es diferente del resultado de multiplicar el valor de la casilla “BaseImponible” por  el 12%.",
+            "mensaje": "MontoCobroIVA calculado incorrectamente según la BaseImponible."
+        },
+        {
             "codigo": "FEL_RCP422",
             "validacion": "El tipo de DTE es RECI y la casilla tiene un tipo de personeria diferente al de la lista Tipos de DTE por personeria, y no está dentro de los códigos de establecimientos que permite RECI 2.2.3.1 Clasificación y tipos de establecimiento de personas individuales, que pueden emitir Constancias y recibos.",
             "mensaje": "El Tipo de DTE RECI no aplica para este tipo de personería o código - tipo de establecimiento\""
@@ -607,7 +612,7 @@
         {
             "codigo": "FEL_RCP10",
             "validacion": "El Tipo de DTE enviado es diferente de FACT, FCAM, FPEQ, FCAP, NCRE, NDEB, CIVA, CAIS y se incluye el complemento al item.",
-            "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+            "mensaje": "Error. El tipo de DTE no puede incluir complemento al item."
         },
         {
             "codigo": "FEL_GEN104",
@@ -633,6 +638,46 @@
             "codigo": "FEL_GEN108",
             "validacion": "Almacenamiento del documento",
             "mensaje": "Error de procesamiento del XML, debe de reenviarlo para ser aceptado por la SAT."
+        },
+        {
+            "codigo": "Regla426",
+            "validacion": "El tipo de documento ingresado no corresponde a uno permitido.",
+            "mensaje": "Error. El Id del Transportista ingresado no corresponde a los permitidos en el catálogo."
+        },
+        {
+            "codigo": "Regla427",
+            "validacion": "El tipo de documento es igual a NIT y el valor ingresado no corresponde a un NIT valido con estado activo y existente en RTU. \nEl tipo de documento es igual a CUI y el valor ingresado no corresponde a un CUI valido según el servicio ValidaRenap.",
+            "mensaje": "Error. El Id del Transportista ingresado no existe o no está activo en los registros de la SAT."
+        },
+        {
+            "codigo": "Regla428",
+            "validacion": "El tipo de documento es igual a CUI y el valor ingresado corresponde a un CUI con estado de fallecido.",
+            "mensaje": "Error. El Id del Transportista tipo CUI corresponde a una persona fallecida."
+        },
+        {
+            "codigo": "Regla429",
+            "validacion": "El tipo de documento es igual a Extranjero y el valor ingresado no cumple con el formato siguiente: - Tener una longitud entre 3 y 18 caracteres - Puede contener letras de la A a la Z (mayúsculas) y dígitos (0-9) - No debe contener espacios",
+            "mensaje": "Error. El Id del Transportista tipo Extranjero no cumple con el formato establecido."
+        },
+        {
+            "codigo": "Regla430",
+            "validacion": "El valor ingresado en la Placa no existe en la base de datos de vehículos en la SAT.",
+            "mensaje": "Error. La Placa ingresada no existe en la base de datos de la SAT."
+        },
+        {
+            "codigo": "Regla431",
+            "validacion": "El valor ingresado en la Placa existe en la base de datos de vehículos en la SAT sin embargo se encuentra con estatus Inactivo.",
+            "mensaje": "Error. La Placa ingresada se encuentra con estado Inactivo."
+        },
+        {
+            "codigo": "Regla432",
+            "validacion": "El Tipo de DTE es RANT incluye el tipo de frase 9 y los códigos de escenario son diferentes de 9 y 10.",
+            "mensaje": "Error. El código de escenario no corresponde para el tipo de DTE."
+        },
+        {
+            "codigo": "Regla433",
+            "validacion": "El Tipo de DTE es RANT y la casilla tipo personería contiene uno de los valores siguientes: 715, 716,718, 719, 720, 721, 723, 724, 725. 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 2635, 2719, 2744.",
+            "mensaje": "Error. El contribuyente con el Tipo de personería XXX no puede emitir el tipo de DTE RANT."
         }
     ]
 }
