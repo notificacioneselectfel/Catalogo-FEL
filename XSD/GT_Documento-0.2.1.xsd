@@ -52,6 +52,8 @@
 																		<xs:enumeration value="FCAE"/>
 																		<xs:enumeration value="CIVA"/>
 																		<xs:enumeration value="CAIS"/>
+																		<xs:enumeration value="NEV"/>
+																		<xs:enumeration value="RANT"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
