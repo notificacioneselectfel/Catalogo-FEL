@@ -97,7 +97,7 @@
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:whiteSpace value="collapse"/>
-                        <xs:maxLength value="120"/>
+                        <xs:maxLength value="500"/>
                     </xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
@@ -108,7 +108,7 @@
                 <xs:simpleType>
                     <xs:restriction base="xs:string">
                         <xs:whiteSpace value="collapse"/>
-                        <xs:maxLength value="120"/>
+                        <xs:maxLength value="500"/>
                     </xs:restriction>
 				</xs:simpleType>
 			</xs:attribute>
