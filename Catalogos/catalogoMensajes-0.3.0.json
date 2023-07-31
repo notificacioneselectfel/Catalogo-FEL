@@ -678,6 +678,21 @@
             "codigo": "FEL_RCP433",
             "validacion": "El Tipo de DTE es RANT y la casilla tipo personería contiene uno de los valores siguientes: 715, 716,718, 719, 720, 721, 723, 724, 725. 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 2635, 2719, 2744.",
             "mensaje": "Error. El contribuyente con el Tipo de personería XXX no puede emitir el tipo de DTE RANT."
+        },
+        {
+            "codigo": "FEL_RCP434",
+            "validacion": "Se incluye la casilla “TipoDTEReferenciado” y el contenido de la casilla es diferente de FYDUCA.",
+            "mensaje": "Error. El tipo de DTE referenciado no existe."
+        },
+        {
+            "codigo": "FEL_RCP435",
+            "validacion": "El contenido de la casilla es diferente de “S” y el Tipo de Documento que se está emitiendo es RANT.",
+            "mensaje": "Error. El tipo de DTE únicamente puede facturar servicios."
+        },
+        {
+            "codigo": "FEL_RCP436",
+            "validacion": "El contenido de la casilla es CF y los tipos de DTE son NEV y RANT.",
+            "mensaje": "Error. El Id Receptor no puede ser CF para los tipos de DTE NEV o RANT."
         }
     ]
 }
