@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:ctrasmer="http://www.sat.gob.gt/face2/TrasladoMercancías/0.1.0" 
-	targetNamespace="http://www.sat.gob.gt/face2/TrasladoMercancías/0.1.0" 
+	xmlns:ctrasmer="http://www.sat.gob.gt/face2/TrasladoMercancias/0.1.0" 
+	targetNamespace="http://www.sat.gob.gt/face2/TrasladoMercancias/0.1.0" 
 	elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="TrasladoMercancias">
 		<xs:annotation>
