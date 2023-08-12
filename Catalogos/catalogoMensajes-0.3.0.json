@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "05/07/2023"
+        "Ultima Actualizacion": "11/08/2023"
     },
     "Contenido": [
         {
@@ -443,6 +443,11 @@
             "codigo": "FEL_ANU378",
             "validacion": "La Fecha de certificación de la anulación es diferente a la Fecha de anulación (se despercian horas, minutos y segundos)",
             "mensaje": "La Fecha de certificación es diferente a la Fecha de anulación."
+        },
+        {
+            "codigo": "FEL_ANU437",
+            "validacion": " La casilla “Fecha de anulación” excede la fecha de vencimiento de la declaración mensual del IVA del período impositivo al que corresponde el documento a anular (Fecha de Emisión del DTE a Anular).",
+            "mensaje": "Error. La fecha de anulación excede la fecha de vencimiento del período de la declaración mensual del IVA al que corresponde el documento a anular."
         },
         {
             "codigo": "FEL_RCP379",
