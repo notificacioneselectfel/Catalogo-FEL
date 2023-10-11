@@ -336,6 +336,14 @@
       "contieneResolucion": false,
       "contieneFechaResolucion": false,
             "textoAColocar": "Exenta del IVA (art. 8 Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
+            "codigoEscenario": 33,
+            "escenario": "Ingresos no afectos, obtenidos en concepto de cuotas cuyo destino específicamente para cubrir gastos comunes de administración, mantenimiento, reparaciones, de servicios generales y primas de seguros de edificios, efectuados por los condóminos.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "No afecto al IVA (Fuera del hecho generador art. 3, Ley del IVA)"
           }
 
 
@@ -488,10 +496,17 @@
           },
        {
             "codigoEscenario": 11,
-            "escenario": "Exención a servicios de transporte público y colectivo. Prestación de servicios de transporte público y transporte colectivo a través de vehículos eléctricos, híbridos, impulsados por hidrógeno y sistema de transporte eléctrico..",
+            "escenario": "Exención a servicios de transporte público y colectivo. Prestación de servicios de transporte público y transporte colectivo a través de vehículos eléctricos, híbridos, impulsados por hidrógeno y sistema de transporte eléctrico.",
       "contieneResolucion": false,
       "contieneFechaResolucion": false,
             "textoAColocar": "Exenta del ISR (Art. 7, literal g, Dec. 40-2022, Ley Inc. Mov. Eléctrica)"
+          },
+       {
+            "codigoEscenario": 12,
+            "escenario": "Rentas no afectas, obtenidos en conceptos de cuotas cuyo destino específicamente para cubrir gastos comunes de administración, mantenimiento, reparaciones, de servicios generales y primas de seguros de edificios, efectuados por los condóminos.",
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "No afecta al ISR (Fuera del hecho generador, arto. 10, Ley de Actualización Tributaria)"
           }
         ]
       },
@@ -571,7 +586,7 @@
             "esRegimenElectronico": false,
             "contieneResolucion": false,
             "contieneFechaResolucion": false,
-            "textoAColocar": "Este documento no constituye Factura Contable ni genera derecho a crédito fiscal del IVA."
+            "textoAColocar": "Este documento no constituye factura contable ni genera derecho a crédito fiscal del IVA."
           },
           {
             "codigoEscenario": 10,
@@ -579,7 +594,7 @@
             "esRegimenElectronico": false,
             "contieneResolucion": false,
             "contieneFechaResolucion": false,
-            "textoAColocar": "Concluido el servicio, debe emitirse la Factura, conforme la liquidación correspondiente."
+            "textoAColocar": "Concluido el servicio, debe emitirse la factura, conforme la liquidación correspondiente."
           }
         ]
       }
