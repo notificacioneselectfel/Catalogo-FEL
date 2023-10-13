@@ -330,14 +330,6 @@
             "textoAColocar": "Exenta del IVA (art. 7 literal “h” o “i” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
           },
           {
-            "codigoEscenario": 32,
-            "escenario": "Contratos Leasing Dec. 2-2021 por Arrendadadoras relacionados a vehículos eléctricos, vehículo de hidrógeno, sistemas de transporte eléctrico teleférico, funicular, tren eléctrico, tren ligero, tranvía o trolebús, cargador para vehículo eléctrico y de hidrógeno, motor eléctrico para vehículo eléctrico y de hidrógeno, batería para motor eléctrico y de hidrógeno.",
-            "incluyeIVA": false,
-      "contieneResolucion": false,
-      "contieneFechaResolucion": false,
-            "textoAColocar": "Exenta del IVA (art. 8 Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
-          },
-          {
             "codigoEscenario": 33,
             "escenario": "Ingresos no afectos, obtenidos en concepto de cuotas cuyo destino específicamente para cubrir gastos comunes de administración, mantenimiento, reparaciones, de servicios generales y primas de seguros de edificios, efectuados por los condóminos.",
             "incluyeIVA": false,
