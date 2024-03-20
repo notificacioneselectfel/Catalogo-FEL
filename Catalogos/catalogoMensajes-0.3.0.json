@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "11/08/2023"
+        "Ultima Actualizacion": "26/02/2024"
     },
     "Contenido": [
         {
@@ -55,7 +55,7 @@
             "mensaje": "La diferencia entre la fecha de emisión y de certificación excede los cinco días."
         },
         {
-            "codigo": "FEL_INF301",
+            "codigo": "FEL_RCP301",
             "validacion": "La casilla Fecha y hora de emisión es posterior al último día del mes de la Fecha y hora de certificación.",
             "mensaje": "La fecha de emisión es posterior al último día del mes de la fecha de certificación."
         },
@@ -426,8 +426,8 @@
         },
         {
             "codigo": "FEL_ANU375",
-            "validacion": "La casilla Fecha de anulación excede a la fecha de vencimiento de la declaración mensual del IVA del período al que corresponde el documento a anular.",
-            "mensaje": "La fecha de anulación excede la fecha de vencimiento del período del IVA al que corresponde el documento a anular."
+            "validacion": "La casilla “Fecha de anulación” excede la fecha de vencimiento de la declaración mensual del IVA del período impositivo al que corresponde el documento a anular (Fecha de Emisión del DTE a Anular).",
+            "mensaje": "La fecha de anulación excede el plazo de vencimiento de la declaración mensual del IVA."
         },
         {
             "codigo": "FEL_ANU376",
@@ -443,11 +443,6 @@
             "codigo": "FEL_ANU378",
             "validacion": "La Fecha de certificación de la anulación es diferente a la Fecha de anulación (se despercian horas, minutos y segundos)",
             "mensaje": "La Fecha de certificación es diferente a la Fecha de anulación."
-        },
-        {
-            "codigo": "FEL_ANU437",
-            "validacion": " La casilla “Fecha de anulación” excede la fecha de vencimiento de la declaración mensual del IVA del período impositivo al que corresponde el documento a anular (Fecha de Emisión del DTE a Anular).",
-            "mensaje": "Error. La fecha de anulación excede la fecha de vencimiento del período de la declaración mensual del IVA al que corresponde el documento a anular."
         },
         {
             "codigo": "FEL_RCP379",
@@ -697,7 +692,72 @@
         {
             "codigo": "FEL_RCP436",
             "validacion": "El contenido de la casilla es CF y los tipos de DTE son NEV y RANT.",
-            "mensaje": "Error. El Id Receptor no puede ser CF para los tipos de DTE NEV o RANT."
+      "mensaje": "Error. El Id Receptor no puede ser CF para los tipos de DTE NEV o RANT."
+        },
+        {
+            "codigo": "FEL_RCP437",
+            "validacion": "Se incluye el complemento pero no se incluye la casilla TipoFormaPago o Numero Transacción",
+      "mensaje": "Error. La casilla es de carácter obligatorio."
+        },
+        {
+            "codigo": "FEL_RCP438",
+            "validacion": "Se incluye la casilla sin embargo uno de los valores no se encuentra en el catalogo correspondiente.",
+      "mensaje": "Error. No existe el valor en el catalogo correspondiente."
+        },
+        {
+            "codigo": "FEL_RCP439",
+            "validacion": "La fecha transacción es menor a la fecha de emisión del DTE.",
+      "mensaje": "Error. La Fecha de Transacción no puede ser menor a la fecha de emisión del DTE."
+        },
+        {
+            "codigo": "FEL_RCP440",
+            "validacion": "La casilla es diferente a la sumatoria de todas las casillas Monto del complemento Medios de Pago y esta es diferente del Gran Total del DTE.",
+            "mensaje": "Error. La sumatoria de la casilla Monto del complemento Medios de Pago no puede ser diferente al Gran Total del DTE."
+        },
+        {
+            "codigo": "FEL_RCP442",
+            "validacion": "No se incluye la casilla “Régimen antiguo”, el contenido de la presente casilla coincide con un DTE registrado y vigente en la SAT, pero el valor de la casilla “Tipo de DTE” del documento origen es diferente de: \"FACT\", \"FCAM\",\"FESP\"",
+            "mensaje": "Error. El número de Autorización del Documento Origen corresponde a un documento diferente a factura."
+        },
+        {
+            "codigo": "FEL_RCP443",
+            "validacion": "El tipo de DTE es FACT incluye la marca de exportación y hace referencia a un tipo de DTE FACP y excede los 20 días hábiles.",
+            "mensaje": "Error. Excede el tiempo para la emisión de la Factura Definitiva."
+        },
+        {
+            "codigo": "FEL_RCP444",
+            "validacion": "El DTE es FACP y el NIT emisor no figura dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
+            "mensaje": "Error. El NIT del emisor no está autorizado para poder emitir el tipo de DTE FACP."
+        },
+        {
+            "codigo": "FEL_RCP445",
+            "validacion": "El DTE es FACP y el NIT emisor no figura dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
+            "mensaje": "Error. El NIT del emisor no está autorizado para poder emitir el tipo de DTE FACP."
+        },
+        {
+            "codigo": "FEL_RCP446",
+            "validacion": "El contenido de la casilla no coincide con UUID registrado en SAT.",
+            "mensaje": "Error. El número de autorización no existe."
+        },
+        {
+            "codigo": "FEL_RCP447",
+            "validacion": "El contenido de la casilla pertenece a un DTE diferente de FACP.",
+            "mensaje": "Error. El tipo de DTE no puede ser referenciado."
+        },
+        {
+            "codigo": "FEL_RCP448",
+            "validacion": "El contenido de la casilla no coincide con la moneda registrada del documento origen registrado en SAT.",
+            "mensaje": "Error. El receptor del documento origen no es la misma a la del documento de exportación."
+        },
+        {
+            "codigo": "FEL_RCP449",
+            "validacion": "El contenido de la casilla no coincide con Receptor registrada del documento origen registrado en SAT.",
+            "mensaje": "Error. El tipo de DTE no puede ser referenciado."
+        },
+        {
+            "codigo": "FEL_RCP450",
+            "validacion": "El valor de la casilla Tipo de DTE es “CAIS” y el NIT emisor se encuentra dentro del catálogo de contribuyentes no autorizados. (Se restringirá la emisión de CAIS únicamente para los emisores que se encuentren en el catálogo proporcionado.)",
+            "mensaje": "El NIT emisor no está autorizado para emitir Constancias de Adquisición de Insumos y Servicios."
         }
     ]
 }
