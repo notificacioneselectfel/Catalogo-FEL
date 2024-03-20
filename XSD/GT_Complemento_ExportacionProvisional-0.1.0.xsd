@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2017 rel. 3 sp1 (http://www.altova.com) by chejo (test) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cexprov="http://www.sat.gob.gt/face2/ComplementoExportacionProvisional/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoExportacionProvisional/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ExportacionProvisional">
+		<xs:annotation>
+			<xs:documentation>Definición Global de complemento de exportación provisional</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="LugarExpedicion" minOccurs="0" type="cexprov:ContenidoTexto56">
+					<xs:annotation> <xs:documentation>Lugar de Expendición.</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="NombreConsignatarioODestinatario" type="cexprov:ContenidoTexto1000">
+					<xs:annotation> <xs:documentation>Nombre Consignatario.</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="DireccionConsignatarioODestinatario" minOccurs="1" type="cexprov:ContenidoTexto1000">
+					<xs:annotation> <xs:documentation>Dirección consignatario.</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="PaisConsignatario" minOccurs="0" type="cexprov:ContenidoTexto56">
+					<xs:annotation> <xs:documentation>País consignatario.</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="INCOTERM" type="cexprov:INCOTERMType" minOccurs="0" >
+					<xs:annotation> <xs:documentation>Términos pactados con el vendedor (INCOTERM).</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="OtraReferencia" minOccurs="0" type="cexprov:ContenidoTexto1000">
+					<xs:annotation> <xs:documentation>Otras Referencias</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="NombreExportador" minOccurs="0" type="cexprov:ContenidoTexto1000">
+					<xs:annotation> <xs:documentation>Nombre del exportador.</xs:documentation> </xs:annotation>
+				</xs:element>
+				<xs:element name="CodigoExportador" minOccurs="0" type="cexprov:ContenidoTexto1000">
+					<xs:annotation> <xs:documentation>Código del exportador.</xs:documentation> </xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="cexprov:VersionType" use="required" fixed="1"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="VersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,3}">
+				<xs:annotation>
+					<xs:documentation>por ejemplo. x , donde x  es  numero entero de 0 a 999</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="INCOTERMType">
+		<xs:annotation>
+			<xs:documentation>Catálogo Edifact</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="EXW"/>
+			<xs:enumeration value="FCA"/>
+			<xs:enumeration value="FAS"/>
+			<xs:enumeration value="FOB"/>
+			<xs:enumeration value="CFR"/>
+			<xs:enumeration value="CIF"/>
+			<xs:enumeration value="CPT"/>
+			<xs:enumeration value="CIP"/>
+			<xs:enumeration value="DDP"/>
+			<xs:enumeration value="DAP"/>
+			<xs:enumeration value="DAT"/>
+			<xs:enumeration value="DPU"/>
+			<xs:enumeration value="ZZZ"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContenidoTexto56">
+		<xs:annotation>
+			<xs:documentation>Tipo de dato texto de rango de 56.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:minLength value="1"/>
+			<xs:maxLength value="56"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ContenidoTexto1000">
+		<xs:annotation>
+			<xs:documentation>Tipo de dato texto de rango de 1000.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1000"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

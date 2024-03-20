@@ -7,7 +7,15 @@
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="NombreConsignatarioODestinatario" id="SubTotalConDescuento">
+				<xs:element name="LugarExpedicion" minOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="150"/>
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NombreConsignatarioODestinatario" minOccurs="1">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="70"/>
@@ -26,7 +34,76 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="CodigoConsignatarioODestinatario" minOccurs="0">
+				<xs:element name="PaisConsignatario" minOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="70"/>
+							<xs:minLength value="1"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="INCOTERM" type="cex:INCOTERMType" minOccurs="0"/>
+				<xs:element name="OtraReferencia" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="35"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NombreExportador" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="70"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CodigoExportador" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="17"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroAutorizacionProvisional" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="36"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="SerieDocumentoOrigen" minOccurs="0">
+					<xs:annotation><xs:documentation>Se forma con los primeros 8 dígitos hexadecimales del UUID, de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: dbb51ae2</xs:documentation></xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:whiteSpace value="collapse"/>
+							<xs:minLength value="1"/>
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroDocumentoOrigen" minOccurs="0">
+					<xs:annotation><xs:documentation>Se forma con el equivalente en números decimales de los dígitos hexadecimales del UUID, a partir de la posición 9 hasta la posición 16 (excluyendo los guiones “-“), de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: 979518519</xs:documentation></xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:positiveInteger">
+							<xs:minInclusive value="1"/>
+							<xs:maxInclusive value="999999999999999"/>
+							<xs:totalDigits value="15"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NumeroDeclaracionMercancias" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="50"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- <xs:element name="CodigoConsignatarioODestinatario" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:minLength value="1"/>
@@ -57,32 +134,7 @@
 							<xs:maxLength value="17"/>
 						</xs:restriction>
 					</xs:simpleType>
-				</xs:element>
-				<xs:element name="OtraReferencia" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="35"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="INCOTERM" type="cex:INCOTERMType" minOccurs="0"/>
-				<xs:element name="NombreExportador" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="70"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="CodigoExportador" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="17"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
+				</xs:element> -->
 			</xs:sequence>
 			<xs:attribute name="Version" type="cex:VersionType" use="required" fixed="1"/>
 		</xs:complexType>
