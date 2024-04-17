@@ -466,8 +466,8 @@
         },
         {
             "codigo": "FEL_RCP383",
-            "validacion": "El tipo de documento es NCRE o NDEB y la moneda es diferente a la moneda del documento referenciado según la casilla Numero Autorizacion Documento Origen en el complemento Referencias a las notas de crédito o débito incluido.",
-            "mensaje": "Las notas de débito o crédito deben ser emitidas en la misma moneda del documento origen."
+            "validacion": "El contenido de la casilla es diferente de “B” y el Tipo de Documento que se está emitiendo es alguno de estos: FACA, FCCA, FACP, FAAE o FCAE.",
+            "mensaje": "El contribuyente agropecuario únicamente puede facturar bienes."
         },
         {
             "codigo": "FEL_RCP384",
@@ -731,18 +731,18 @@
         },
         {
             "codigo": "FEL_RCP445",
-            "validacion": "El DTE es FACP y el NIT emisor no figura dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
-            "mensaje": "Error. El NIT del emisor no está autorizado para poder emitir el tipo de DTE FACP."
+            "validacion": " El Tipo de DTE es FACP incluye el tipo de frase 9 y el código de escenario es diferente de 11.",
+            "mensaje": "Error. El código de escenario no corresponde para el tipo de DTE."
         },
         {
             "codigo": "FEL_RCP446",
-            "validacion": "El contenido de la casilla no coincide con UUID registrado en SAT.",
-            "mensaje": "Error. El número de autorización no existe."
+            "validacion": "El contenido de la casilla se encuentra vacío o no coincide con UUID registrado en SAT y el NIT emisor se encuentra dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
+            "mensaje": "Error. La casilla se encuentra vacía o el número de autorización es inválido."
         },
         {
             "codigo": "FEL_RCP447",
-            "validacion": "El contenido de la casilla pertenece a un DTE diferente de FACP.",
-            "mensaje": "Error. El tipo de DTE no puede ser referenciado."
+            "validacion": "El contenido de la casilla pertenece a un DTE diferente de FACP y el NIT emisor se encuentra dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
+            "mensaje": "Error. El tipo de DTE no puede ser referenciado"
         },
         {
             "codigo": "FEL_RCP448",
@@ -752,12 +752,32 @@
         {
             "codigo": "FEL_RCP449",
             "validacion": "El contenido de la casilla no coincide con Receptor registrada del documento origen registrado en SAT.",
-            "mensaje": "Error. El tipo de DTE no puede ser referenciado."
+            "mensaje": "Error. La factura provisional se encuentra anulada."
         },
         {
             "codigo": "FEL_RCP450",
             "validacion": "El valor de la casilla Tipo de DTE es “CAIS” y el NIT emisor se encuentra dentro del catálogo de contribuyentes no autorizados. (Se restringirá la emisión de CAIS únicamente para los emisores que se encuentren en el catálogo proporcionado.)",
             "mensaje": "El NIT emisor no está autorizado para emitir Constancias de Adquisición de Insumos y Servicios."
+        },
+        {
+            "codigo": "FEL_ANU451",
+            "validacion": "El contenido de la presente casilla, corresponde a un DTE registrado en la SAT, el cual tiene asociado uno o más DTE del tipo “CIVA” o “CAIS” con estado Vigente.",
+            "mensaje": "Error. El DTE a anular, tiene asociada alguna Constancia de exención de IVA o de adquisición de insumos y servicios"
+        },
+        {
+            "codigo": "FEL_RCP452",
+            "validacion": "El valor de la casilla Tipo de DTE es “CAIS” y el NIT Emisor no tiene vigente la característica especial: “DECRETO 29-89” *La SAT comparte con cada Certificador de DTE, la característica especial de sus acreditados",
+            "mensaje": "Error. El NIT Emisor debe contar con la característica especial “DECRETO 29-89”, para el Tipo de DTE “CAIS”."
+        },
+        {
+            "codigo": "FEL_RCP453",
+            "validacion": "El número de autorización ingresado corresponde a un DTE el cual no incluye la frase Tipo 4 codigo escenario 11 y el tipo de DTE a emitir es CAIS.",
+            "mensaje": "Error. El número de Autorización corresponde a un Documento Origen que no contiene la frase “No afecta al IVA (Decreto 29-89 Ley de Maquila)”"
+        },
+        {
+            "codigo": "FEL_RCP454",
+            "validacion": "El contenido de la casilla no coincide con la moneda registrada del documento origen registrado en SAT.",
+            "mensaje": "Error. La moneda del documento origen no es la misma a la deldocumento de exportación."
         }
     ]
 }
