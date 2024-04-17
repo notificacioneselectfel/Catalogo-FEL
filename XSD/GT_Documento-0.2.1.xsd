@@ -738,7 +738,7 @@
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1"/>
 			<xs:maxLength value="18"/>
-			<xs:pattern value="((([1-9])+([0-9])*([0-9]|K))|(([1-9]+[0-9]){12,13})|(CF)|^([A-Z0-9&amp;]{3,18}))$"/>
+			<xs:pattern value="((([1-9])+([0-9])*([0-9]|K))|(([1-9]+[0-9]){12,13})|(CF)|^([A-Z0-9&amp;%-/#=]{3,18}))$"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="tipoNITDelEFACE">
