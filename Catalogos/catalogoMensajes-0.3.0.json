@@ -780,17 +780,17 @@
             "mensaje": "Error. La moneda del documento origen no es la misma a la del documento de exportación."
         },
         {
-            "codigo": "FEL_RCP455",
+            "codigo": "FEL_ANU455",
             "validacion": "El contenido de la casilla fue incluido dentro de la Planilla del IVA FEL de la SAT, la cual coincide además en las casillas: • NIT Emisor  • ID del Receptor • Monto Total  • Fecha y Hora de Emisión",
             "mensaje": "Error. El DTE a anular fue incluido en la Planilla del IVA FEL de la SAT, por lo cual no se puede anular."
         },
         {
-            "codigo": "FEL_RCP456",
+            "codigo": "FEL_ANU456",
             "validacion": "El contenido de la casilla corresponde a un DTE que tiene asociada una Retención de IVA en el sistema Retenciones Web de la SAT, la cual coincide además en las casillas: • NIT Emisor • ID del Receptor",
             "mensaje": "Error. El DTE a anular tiene una Retención de IVA en el sistema Retenciones Web de SAT."
         },
         {
-            "codigo": "FEL_RCP457",
+            "codigo": "FEL_ANU457",
             "validacion": "El contenido de la casilla corresponde a un DTE que tiene asociada una Retención de ISR en el sistema Retenciones Web de la SAT, la cual coincide además en las casillas: • NIT Emisor • ID del Receptor • Monto Total • Fecha y Hora de Emisión",
             "mensaje": "Error. El DTE a anular tiene una Retención de ISR en el sistema Retenciones Web de SAT."
         }
