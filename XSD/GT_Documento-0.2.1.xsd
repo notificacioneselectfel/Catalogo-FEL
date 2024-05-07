@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dte="http://www.sat.gob.gt/dte/fel/0.2.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.sat.gob.gt/dte/fel/0.2.0" elementFormDefault="qualified" version="2.0">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/>
 	<xs:element name="GTDocumento">
@@ -107,6 +107,14 @@
 																<xs:annotation>
 																	<xs:documentation>Indica el tipo de personeria que esta emitiendo, opcional en esquema pero requerido para personerias que pueden emitir recibos de donacion.</xs:documentation>
 																</xs:annotation>
+															</xs:attribute>
+															<xs:attribute name="Servicio" use="optional">
+																<xs:annotation> <xs:documentation>Campo de uso para proveedores de servicios. </xs:documentation> </xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="Residencial"/>
+																	</xs:restriction>
+																</xs:simpleType>
 															</xs:attribute>
 														</xs:complexType>
 													</xs:element>
