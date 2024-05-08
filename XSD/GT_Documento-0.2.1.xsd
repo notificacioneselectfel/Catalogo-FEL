@@ -408,7 +408,7 @@
 																				</xs:annotation>
 																				<xs:complexType>
 																					<xs:sequence>
-																						<xs:element name="Impuesto" maxOccurs="20">
+																						<xs:element name="Impuesto" maxOccurs="2">
 																							<xs:annotation>
 																								<xs:documentation>Agrupa los datos de un Impuesto.</xs:documentation>
 																							</xs:annotation>
