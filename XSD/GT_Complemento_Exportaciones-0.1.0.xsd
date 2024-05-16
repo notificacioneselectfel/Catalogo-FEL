@@ -103,38 +103,6 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<!-- <xs:element name="CodigoConsignatarioODestinatario" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="17"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="NombreComprador" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="150"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="DireccionComprador" minOccurs="0" maxOccurs="1">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="150"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element>
-				<xs:element name="CodigoComprador" minOccurs="0">
-					<xs:simpleType>
-						<xs:restriction base="xs:string">
-							<xs:minLength value="1"/>
-							<xs:maxLength value="17"/>
-						</xs:restriction>
-					</xs:simpleType>
-				</xs:element> -->
 			</xs:sequence>
 			<xs:attribute name="Version" type="cex:VersionType" use="required" fixed="1"/>
 		</xs:complexType>
