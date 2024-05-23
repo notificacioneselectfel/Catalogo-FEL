@@ -7,7 +7,7 @@
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="LugarExpedicion" minOccurs="1">
+				<xs:element name="LugarExpedicion" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="150"/>
@@ -34,7 +34,41 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="PaisConsignatario" minOccurs="1">
+				<!-- Campos agregados de ultimo -->
+				<xs:element name="CodigoConsignatarioODestinatario" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="17"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="NombreComprador" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="150"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="DireccionComprador" minOccurs="0" maxOccurs="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="150"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="CodigoComprador" minOccurs="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="1"/>
+							<xs:maxLength value="17"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<!-- fin cambios agregados de ultimo-->
+				<xs:element name="PaisConsignatario" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:maxLength value="70"/>
@@ -42,7 +76,6 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
-				<xs:element name="INCOTERM" type="cex:INCOTERMType" minOccurs="0"/>
 				<xs:element name="OtraReferencia" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
@@ -51,6 +84,7 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="INCOTERM" type="cex:INCOTERMType" minOccurs="0"/>
 				<xs:element name="NombreExportador" minOccurs="0">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
