@@ -501,7 +501,7 @@
         },
         {
             "codigo": "FEL_RCP423",
-            "validacion": "El Tipo de DTE es RDON o RECI y la casilla AfiliacionIVA se encuentra vacía y en la casilla Tipo Personería se consigna un valor diferente de 715, 716,718, 719, 720, 721, 723, 724, 725. 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 2635, 2719, 2744",
+            "validacion": "El Tipo de DTE es RDON o RECI y la casilla AfiliacionIVA se encuentra vacía y en la casilla Tipo Personería se consigna un valor diferente de 710, 715, 716,718, 719, 720, 721, 723, 724, 725. 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 2635, 2719, 2744. \n*Está deberá validar la personería con la que cuenta en el MiniRTU. ",
             "mensaje": "Debe de incluir afiliación al IVA para poder emitir el Tipo de DTE RDON o RECI"
         },
         {
@@ -803,6 +803,11 @@
             "codigo": "FEL_RCP459",
             "validacion": "El NIT Emisor no cuenta con una afiliación al IVA con estado Activo para la fecha de emisión del DTE.",
             "mensaje": "Error. El NIT del emisor no cuenta con afiliación al IVA con estado Activo."
+        },
+        {
+            "codigo": "FEL_RCP460",
+            "validacion": "El tipo de DTE contiene uno de los códigos: “CIVA” o “CAIS”, “RECI”, “FESP” y el código de establecimiento, corresponde a un establecimiento de clasificación y tipo que no tiene permitido el tipo de DTE, según la tabla 2.2.3.1 \n*Para el tipo de DTE “RECI” Si los contribuyentes no están dentro de los permitidos por código y tipo de establecimiento, pero si cuentan con el tipo de personería indicado en 2.5.2 “Tipos de personería” podrán realizar la emisión.",
+            "mensaje": "Error. La clasificación o tipo del establecimiento no le permite el tipo de DTE."
         }
     ]
 }
