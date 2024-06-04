@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "29/04/2024"
+        "Ultima Actualizacion": "04/06/2024"
     },
     "Contenido": [
         {
@@ -131,8 +131,8 @@
         },
         {
             "codigo": "FEL_RCP316",
-            "validacion": "(El contenido de la casilla es PEQUEÑO CONTRIBUYENTE) y (el contenido de la casilla Tipo de DTE incluye uno de los textos:FACT, FCAM, RDON, RECI, NDEB, NCRE).",
-            "mensaje": "El Tipo de Documento no aplica para este Régimen del IVA."
+            "validacion": "La casilla contiene un Régimen del IVA al cual NO se le permite el Tipo de DTE (casilla “Tipo”) que se pretende emitir, según la matriz “Tipos de DTE por cada afiliación del IVA” (2.5.1).",
+            "mensaje": "Error. El Tipo de DTE no aplica para este Régimen del IVA”."
         },
         {
             "codigo": "FEL_RCP317",
@@ -731,22 +731,22 @@
         },
         {
             "codigo": "FEL_RCP445",
-            "validacion": " El Tipo de DTE es FACP incluye el tipo de frase 9 y el código de escenario es diferente de 11.",
+            "validacion": "El Tipo de DTE es FACP incluye el tipo de frase 9 y el código de escenario es diferente de 11.",
             "mensaje": "Error. El código de escenario no corresponde para el tipo de DTE."
         },
         {
             "codigo": "FEL_RCP446",
-            "validacion": "El contenido de la casilla se encuentra vacío o no coincide con UUID registrado en SAT y el NIT emisor se encuentra dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
-            "mensaje": "Error. La casilla se encuentra vacía o el número de autorización es inválido."
+            "validacion": "El contenido de la casilla no coincide con UUID registrado en SAT.",
+            "mensaje": "Error. El número de autorización es inválido."
         },
         {
             "codigo": "FEL_RCP447",
-            "validacion": "El contenido de la casilla pertenece a un DTE diferente de FACP y el NIT emisor se encuentra dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
-            "mensaje": "Error. El tipo de DTE no puede ser referenciado"
+            "validacion": "El contenido de la casilla pertenece a un DTE diferente de FACP.",
+            "mensaje": "Error. El tipo de DTE no puede ser referenciado."
         },
         {
             "codigo": "FEL_RCP448",
-            "validacion": " El contenido de la casilla no coincide con UUID vigente y el NIT emisor se encuentra dentro del padrón de exportadores proveído por la Intendencia de Aduanas.",
+            "validacion": " El contenido de la casilla no coincide con UUID vigente.",
             "mensaje": "Error. La factura provisional se encuentra anulada."
         },
         {
@@ -793,6 +793,16 @@
             "codigo": "FEL_ANU457",
             "validacion": "El contenido de la casilla corresponde a un DTE que tiene asociada una Retención de ISR en el sistema Retenciones Web de la SAT, la cual coincide además en las casillas: • NIT Emisor • ID del Receptor • Monto Total • Fecha y Hora de Emisión",
             "mensaje": "Error. El DTE a anular tiene una Retención de ISR en el sistema Retenciones Web de SAT."
+        },
+        {
+            "codigo": "FEL_ANU458",
+            "validacion": "El contenido de la presente casilla corresponde a un DTE registrado en la SAT con estado “Inactivo” (Anulado).",
+            "mensaje": "Error. El DTE a anular se encuentra con estado diferente a vigente."
+        },
+        {
+            "codigo": "FEL_RCP459",
+            "validacion": "El NIT Emisor no cuenta con una afiliación al IVA con estado Activo para la fecha de emisión del DTE.",
+            "mensaje": "Error. El NIT del emisor no cuenta con afiliación al IVA con estado Activo."
         }
     ]
 }
