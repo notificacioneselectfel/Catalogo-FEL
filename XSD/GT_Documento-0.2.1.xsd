@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dte="http://www.sat.gob.gt/dte/fel/0.2.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" targetNamespace="http://www.sat.gob.gt/dte/fel/0.2.0" elementFormDefault="qualified" version="2.0">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="http://www.w3.org/TR/2002/REC-xmldsig-core-20020212/xmldsig-core-schema.xsd"/>
 	<xs:element name="GTDocumento">
@@ -113,6 +113,15 @@
 																<xs:simpleType>
 																	<xs:restriction base="xs:string">
 																		<xs:enumeration value="Residencial"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="Dispositivo" use="optional">
+																<xs:annotation> <xs:documentation>Campo de uso para identificar del dispositivo donde se realizó. Uso exclusivo para aplicación de SAT AV y SAT móvil (App) </xs:documentation> </xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="APP"/>
+																		<xs:enumeration value="AV"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -688,6 +697,10 @@
 																<xs:pattern value="((\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(.(\d{3}))?(-06:00)?)"/>
 															</xs:restriction>
 														</xs:simpleType>
+													</xs:element>
+													<xs:element name="OrigenCertificacion" minOccurs="0">
+														<xs:annotation> <xs:documentation>Es identificador si su origen fue por la AV o App de Fel</xs:documentation> </xs:annotation>
+														<xs:simpleType> <xs:restriction base="xs:integer"> </xs:restriction> </xs:simpleType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
