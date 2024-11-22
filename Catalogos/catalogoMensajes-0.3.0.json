@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "04/06/2024"
+        "Ultima Actualizacion": "28/10/2024"
     },
     "Contenido": [
         {
@@ -116,7 +116,7 @@
         },
         {
             "codigo": "FEL_RCP313",
-            "validacion": "El contenido de esta casilla es diferente al resultado de (Casilla Cantidad) multiplicado por (casilla PrecioUnitario)",
+            "validacion": "El contenido de esta casilla es diferente al resultado de (Casilla “Cantidad”) multiplicado por (casilla “PrecioUnitario”)",
             "mensaje": "Precio calculado incorrectamente."
         },
         {
@@ -808,6 +808,36 @@
             "codigo": "FEL_RCP460",
             "validacion": "El tipo de DTE contiene uno de los códigos: “CIVA” o “CAIS”, “RECI”, “FESP” y el código de establecimiento, corresponde a un establecimiento de clasificación y tipo que no tiene permitido el tipo de DTE, según la tabla 2.2.3.1 \n*Para el tipo de DTE “RECI” Si los contribuyentes no están dentro de los permitidos por código y tipo de establecimiento, pero si cuentan con el tipo de personería indicado en 2.5.2 “Tipos de personería” podrán realizar la emisión.",
             "mensaje": "Error. La clasificación o tipo del establecimiento no le permite el tipo de DTE."
+        },
+        {
+            "codigo": "FEL_ANU461",
+            "validacion": "El contenido de la casilla contiene asociada una garantía mobiliaria, esto según la información que provee el Registro de Garantías Mobiliarias.",
+            "mensaje": "El DTE está ingresado en el Registro de Garantías Mobiliarias, no se permite la anulación."
+        },
+        {
+            "codigo": "FEL_ANU462",
+            "validacion": "El contenido de la presente casilla corresponde un DTE registrado en SAT con estado “IP” (Inactivo (anulado) Pendiente de anular)",
+            "mensaje": "La transacción de anulación ya se encuentra registrada en SAT y pendiente de aprobación."
+        },
+        {
+            "codigo": "FEL_RCP463",
+            "validacion": "Se incluye la casilla, el tipo de DTE es “CIVA”, pero la casilla no contiene valor o es mayor al monto total de IVA del DTE registrado en la SAT, al cual se hace referencia según la casilla “Número autorización del documento origen”. Nota: Se debe aplicar la tolerancia de más o menos un decimal, según el anexo “Tolerancia en el cálculo de las casillas numéricas”",
+            "mensaje": "Error. El monto exento de IVA no puede ser vacío o mayor al total de IVA del documento origen."
+        },
+        {
+            "codigo": "FEL_ANU464",
+            "validacion": "El contenido de la casilla fue incluido dentro del LET de la SAT, la cual coincide además en las casillas: • NIT Emisor • ID del Receptor • Monto Total • Fecha y Hora de Emisión",
+            "mensaje": "El DTE a anular fue incluido en el LET de SAT, por lo cual es necesario que rectifique el mismo."
+        },
+        {
+            "codigo": "FEL_RCP465",
+            "validacion": " El número de autorización del documento origen cuenta con una constancia CIVA o CAIS con estado vigente",
+            "mensaje": "No es permitido emitir derivado que el DTE referenciado cuenta con una constancia con estatus vigente."
+        },
+        {
+            "codigo": "FEL_ANU001",
+            "validacion": "Si cumple con la validación 3.9.6 numeral 1, deberá de enviar la transacción de anulación con estado “IP” hacia el operador de anulaciones extemporáneas, resguardándolo con estado inactivo pendiente de anular.",
+            "mensaje": "Su transacción de anulación se encuentra pendiente de autorización por parte de la Administración Tributaria."
         }
     ]
 }
