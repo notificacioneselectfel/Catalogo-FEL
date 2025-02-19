@@ -55,6 +55,11 @@
 																		<xs:enumeration value="NEV"/>
 																		<xs:enumeration value="RANT"/>
 																		<xs:enumeration value="FACP"/>
+																		<xs:enumeration value="FEPE"/> <!-- Factura Especifica -->
+																		<xs:enumeration value="FARP"/> <!-- Factura Contribuyente Régimen Primario -->
+																		<xs:enumeration value="FCRP"/> <!-- Factura Cambiaria Contribuyente Régimen Primario -->
+																		<xs:enumeration value="FPEC"/> <!-- Factura Contribuyente Régimen Pecuario -->
+																		<xs:enumeration value="FCPC"/> <!-- Factura Cambiaria Contribuyente Régimen Pecuario-->
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -203,6 +208,18 @@
 																		<xs:enumeration value="AGE"/>
 																		<xs:enumeration value="ECA"/>
 																		<xs:enumeration value="EXI"/>
+																		<xs:enumeration value="PRI"/> <!-- Primario -->
+																		<xs:enumeration value="PEC"/> <!-- Pecuario -->
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="ClasificacionEmisor" >
+																<xs:annotation>
+																	<xs:documentation>Clasicación del Emisor de acuerdo a la afiliación Pecuario y su clasicación</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:integer">
+																		<xs:enumeration value="1674"/> <!-- INTERMEDIARIO BOVINO -->
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -260,6 +277,16 @@
 																</xs:annotation>
 																<xs:simpleType>
 																	<xs:restriction base="dte:TipoCorreoElectronico">
+																		<xs:whiteSpace value="collapse"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="DestinodelaVenta">
+																<xs:annotation>
+																	<xs:documentation>Destino de la venta.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="dte:DestinoDeLaVentaCondicion">
 																		<xs:whiteSpace value="collapse"/>
 																	</xs:restriction>
 																</xs:simpleType>
@@ -697,10 +724,6 @@
 																<xs:pattern value="((\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(.(\d{3}))?(-06:00)?)"/>
 															</xs:restriction>
 														</xs:simpleType>
-													</xs:element>
-													<xs:element name="OrigenCertificacion" minOccurs="0">
-														<xs:annotation> <xs:documentation>Es identificador si su origen fue por la AV o App de Fel</xs:documentation> </xs:annotation>
-														<xs:simpleType> <xs:restriction base="xs:integer"> </xs:restriction> </xs:simpleType>
 													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
@@ -1182,7 +1205,46 @@
 			<xs:enumeration value="CGP25LBS"/>
 			<xs:enumeration value="CGP35LBS"/>
 			<xs:enumeration value="CGP100LBS"/>
-            <xs:enumeration value="GALDIESEL"/>
+			<xs:enumeration value="GALDIESEL"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DestinoDeLaVentaPrimario">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="Supermercado"/>
+			<xs:enumeration value="Mercado cantonal"/>
+			<xs:enumeration value="Mercado municipal" />
+			<xs:enumeration value="Centro de acopio"/>
+			<xs:enumeration value="Exportación"/>
+			<xs:enumeration value="Restaurante"/>
+			<xs:enumeration value="Organización de Padres de Familia"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DestinoDeLaVentaPecuario">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="Supermercado"/>
+			<xs:enumeration value="Mercado cantonal"/>
+			<xs:enumeration value="Mercado municipal"/>
+			<xs:enumeration value="Centro de acopio"/>
+			<xs:enumeration value="Exportación en pie"/>
+			<xs:enumeration value="Intermediación de productos bovinos"/>
+			<xs:enumeration value="Restaurante"/>
+			<xs:enumeration value="Organización de Padres de Familia"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DestinoDeLaVentaCondicion">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:enumeration value="Supermercado"/>
+			<xs:enumeration value="Mercado cantonal"/>
+			<xs:enumeration value="Mercado municipal"/>
+			<xs:enumeration value="Centro de acopio"/>
+			<xs:enumeration value="Exportación"/> <!-- Primario -->
+			<xs:enumeration value="Exportación en pie"/> <!-- Pecuario -->
+			<xs:enumeration value="Intermediación de productos bovinos"/>
+			<xs:enumeration value="Restaurante"/>
+			<xs:enumeration value="Organización de Padres de Familia"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

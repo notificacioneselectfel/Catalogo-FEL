@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:crfe="http://www.sat.gob.gt/face2/ComplementoRetencionesFacturaEspecifica/0.1.0" targetNamespace="http://www.sat.gob.gt/face2/ComplementoRetencionesFacturaEspecifica/0.1.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="RetencionesFacturaEspecifica">
+		<xs:annotation>
+			<xs:documentation>El presente complemento, debe incluirse únicamente en los documentos del tipo: Factura Específica.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="RetencionICT" type="crfe:NumerosDecimales" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Monto de retención de ICT.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="TotalMenosRetenciones" type="crfe:NumerosDecimales" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Monto total menos retenciones.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la versión de este complemento.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="NumerosDecimales" final="">
+		<xs:annotation>
+			<xs:documentation>Acepta cantidades mayores a 0</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:fractionDigits value="10"/>
+			<xs:totalDigits value="22"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

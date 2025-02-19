@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- editado con XMLSpy v2018 rel. 2 (http://www.altova.com) por Eduardo Guillen (personal) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:dte="http://www.sat.gob.gt/dte/fel/0.1.0" xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dte="http://www.sat.gob.gt/dte/fel/0.1.0"
+	xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
 	targetNamespace="http://www.sat.gob.gt/dte/fel/0.1.0" elementFormDefault="qualified"
 	version="0.1.0">
 	<xs:import namespace="http://www.w3.org/2000/09/xmldsig#"
@@ -26,65 +28,59 @@
 									<xs:sequence>
 										<xs:element name="DatosGenerales" id="DatosAnulacion">
 											<xs:complexType>
-												<xs:attribute name="ID" use="required"
-												fixed="DatosAnulacion"/>
-												<xs:attribute name="NumeroDocumentoAAnular"
-												type="dte:tipoUUID" use="required">
-												<xs:annotation>
-												<xs:documentation>Número de autorización asignado al DTE que se está Anulando</xs:documentation>
-												</xs:annotation>
+												<xs:attribute name="ID" use="required" fixed="DatosAnulacion"/>
+												<xs:attribute name="NumeroDocumentoAAnular" type="dte:tipoUUID" use="required">
+													<xs:annotation>
+														<xs:documentation>Número de autorización asignado al DTE que se está Anulando</xs:documentation>
+													</xs:annotation>
 												</xs:attribute>
-												<xs:attribute name="NITEmisor" use="required"
-												id="NitEmisorDocumentoAnular">
-												<xs:annotation>
-												<xs:documentation>Indica el NIT del Emisor del DTE (sin guión).</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="dte:tipoNITDelEFACE">
-												<xs:whiteSpace value="collapse"/>
-												</xs:restriction>
-												</xs:simpleType>
+												<xs:attribute name="NITEmisor" use="required" id="NitEmisorDocumentoAnular">
+													<xs:annotation>
+														<xs:documentation>Indica el NIT del Emisor del DTE (sin guión).</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="dte:tipoNITDelEFACE">
+															<xs:whiteSpace value="collapse"/>
+														</xs:restriction>
+													</xs:simpleType>
 												</xs:attribute>
-												<xs:attribute name="IDReceptor" use="required"
-												id="IDReceptorDocumentoAnular">
-												<xs:annotation>
-												<xs:documentation>Indica el NIT, CUI o Identificacion Extranjera del RECEPTOR, CF.</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="dte:tipoNITReceptor">
-												<xs:whiteSpace value="collapse"/>
-												</xs:restriction>
-												</xs:simpleType>
+												<xs:attribute name="IDReceptor" use="required" id="IDReceptorDocumentoAnular">
+													<xs:annotation>
+														<xs:documentation>Indica el NIT, CUI o Identificacion Extranjera del RECEPTOR, CF.</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="dte:tipoNITReceptor">
+															<xs:whiteSpace value="collapse"/>
+														</xs:restriction>
+													</xs:simpleType>
 												</xs:attribute>
-												<xs:attribute name="FechaEmisionDocumentoAnular"
-												use="required">
-												<xs:annotation>
-												<xs:documentation>Fecha y hora de emisión del DTE a Anular. Formato aaaa-mm-ddThh:mm:ss.000-06:00)</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="xs:dateTime"/>
-												</xs:simpleType>
+												<xs:attribute name="FechaEmisionDocumentoAnular" use="required">
+													<xs:annotation>
+														<xs:documentation>Fecha y hora de emisión del DTE a Anular. Formato aaaa-mm-ddThh:mm:ss.000-06:00)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:dateTime"/>
+													</xs:simpleType>
 												</xs:attribute>
-												<xs:attribute name="FechaHoraAnulacion"
-												use="required">
-												<xs:annotation>
-												<xs:documentation>Fecha y hora de la Anulación del DTE. Formato aaaa-mm-ddThh:mm:ss.000-06:00)</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="xs:dateTime"/>
-												</xs:simpleType>
+												<xs:attribute name="FechaHoraAnulacion" use="required">
+													<xs:annotation>
+														<xs:documentation>Fecha y hora de la Anulación del DTE. Formato aaaa-mm-ddThh:mm:ss.000-06:00)</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:dateTime"/>
+													</xs:simpleType>
 												</xs:attribute>
 												<xs:attribute name="MotivoAnulacion" use="required">
-												<xs:annotation>
-												<xs:documentation>Observaciones de la razon de la Anulacion</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="xs:string">
-												<xs:maxLength value="255"/>
-												<xs:minLength value="1"/>
-												<xs:whiteSpace value="collapse"/>
-												</xs:restriction>
-												</xs:simpleType>
+													<xs:annotation>
+														<xs:documentation>Observaciones de la razon de la Anulacion</xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="255"/>
+															<xs:minLength value="1"/>
+															<xs:whiteSpace value="collapse"/>
+														</xs:restriction>
+													</xs:simpleType>
 												</xs:attribute>
 											</xs:complexType>
 										</xs:element>
@@ -95,37 +91,37 @@
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
-												<xs:element name="NITCertificador">
-												<xs:annotation>
-												<xs:documentation>NIT del Certificador sin guión.</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="dte:tipoNITDelEFACE">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="13"/>
-												<xs:whiteSpace value="collapse"/>
-												<xs:pattern value="([1-9])+([0-9])*([0-9]|K)"/>
-												</xs:restriction>
-												</xs:simpleType>
-												</xs:element>
-												<xs:element name="NombreCertificador">
-												<xs:annotation>
-												<xs:documentation>Nombre del Certificador (De acuerdo a los registros tributarios).</xs:documentation>
-												</xs:annotation>
-												<xs:simpleType>
-												<xs:restriction base="xs:string">
-												<xs:minLength value="1"/>
-												<xs:maxLength value="255"/>
-												<xs:whiteSpace value="collapse"/>
-												</xs:restriction>
-												</xs:simpleType>
-												</xs:element>
-												<xs:element name="FechaHoraCertificacion"
+													<xs:element name="NITCertificador">
+														<xs:annotation>
+															<xs:documentation>NIT del Certificador sin guión.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="dte:tipoNITDelEFACE">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="13"/>
+																<xs:whiteSpace value="collapse"/>
+																<xs:pattern value="([1-9])+([0-9])*([0-9]|K)"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="NombreCertificador">
+														<xs:annotation>
+															<xs:documentation>Nombre del Certificador (De acuerdo a los registros tributarios).</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:maxLength value="255"/>
+																<xs:whiteSpace value="collapse"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="FechaHoraCertificacion"
 												type="xs:dateTime">
-												<xs:annotation>
-												<xs:documentation>Es la fecha y hora del momento en que el Certificador incorpora su firma electrónica a la Anulación del DTE.</xs:documentation>
-												</xs:annotation>
-												</xs:element>
+														<xs:annotation>
+															<xs:documentation>Es la fecha y hora del momento en que el Certificador incorpora su firma electrónica a la Anulación del DTE.</xs:documentation>
+														</xs:annotation>
+													</xs:element>
 												</xs:sequence>
 											</xs:complexType>
 										</xs:element>
@@ -174,7 +170,7 @@
 		<xs:restriction base="xs:string">
 			<xs:minLength value="1"/>
 			<xs:maxLength value="18"/>
-			<xs:pattern value="((([1-9])+([0-9])*([0-9]|K))|(([1-9]+[0-9]){12,13})|(CF)|^([A-Z0-9]{3,18}))$"/>
+			<xs:pattern value="((([1-9])+([0-9])*([0-9]|K))|(([1-9]+[0-9]){12,13})|(CF)|^([A-Z0-9&amp;%-/#=]{3,18}))$"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="tipoNITDelEFACE">
