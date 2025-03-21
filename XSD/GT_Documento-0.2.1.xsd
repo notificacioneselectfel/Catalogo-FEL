@@ -315,7 +315,7 @@
 																				<xs:restriction base="xs:positiveInteger">
 																					<xs:whiteSpace value="collapse"/>
 																					<xs:minInclusive value="1"/>
-																					<xs:maxInclusive value="9"/>
+																					<xs:maxInclusive value="12"/>
 																				</xs:restriction>
 																			</xs:simpleType>
 																		</xs:attribute>
