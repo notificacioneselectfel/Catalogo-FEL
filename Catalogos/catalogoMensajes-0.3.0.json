@@ -1,7 +1,7 @@
 {
     "Cabecera": {
         "Nombre": "FEL-CATALOGO-MENSAJES",
-        "Ultima Actualizacion": "28/10/2024"
+        "Ultima Actualizacion": "02/12/2024"
     },
     "Contenido": [
         {
@@ -837,7 +837,97 @@
         {
             "codigo": "FEL_ANU001",
             "validacion": "Si cumple con la validación 3.9.6 numeral 1, deberá de enviar la transacción de anulación con estado “IP” hacia el operador de anulaciones extemporáneas, resguardándolo con estado inactivo pendiente de anular.",
-            "mensaje": "Su transacción de anulación se encuentra pendiente de autorización por parte de la Administración Tributaria."
+            "mensaje": "Su transacción de anulación se encuentra pendiente de autorización por parte de la Administración Tributaria. La respuesta le estará llegando a su correo electrónico."
+        },
+        {
+            "codigo": "FEL_RCP484",
+            "validacion": "El tipo de DTE es diferente de FACT o FCAM y el tipo de frase es 4 y el código de escenario es 36.",
+            "mensaje": "El código de escenario no corresponde para el tipo de DTE."
+        },
+        {
+            "codigo": "FEL_RCP487",
+            "validacion": "El tipo de DTE es FPEC o FCPC y el tipo de frase es 11 y el código de escenario se incluyen más de una vez.",
+            "mensaje": "El tipo de frase y escenario solo pueden incluirse una vez en el XML."
+        },
+        {
+            "codigo": "FEL_RCP489",
+            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FPEC o FCPC el tipo de frase es 11 y el código de escenario es diferente de 3.",
+            "mensaje": "El código de escenario no corresponde para la exportación del Régimen Pecuario."
+        },
+        {
+            "codigo": "FEL_RCP490",
+            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FPEC o FCPC el tipo de frase es 11 y el código de escenario es igual a 3 y la forma de cálculo (Régimen Pecuario Exportador y forma de pago del impuesto del 2% sobre las ventas brutas) no corresponde a la registrada en RTU.",
+            "mensaje": "El código de escenario no corresponde a la forma de cálculo registrada en RTU."
+        },
+        {
+            "codigo": "FEL_RCP491",
+            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FARP o FCRP el tipo de frase es 10 y el código de escenario es diferente de 2.",
+            "mensaje": "El código de escenario no corresponde para la exportación del Régimen Primario"
+        },
+        {
+            "codigo": "FEL_RCP492",
+            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FARP o FCRP el tipo de frase es 10 y el código de escenario es igual a 2 y forma de cálculo (Régimen Primario Exportador y forma de pago del impuesto es el 2% sobre las ventas brutas.) no corresponde a la registrada en RTU.",
+            "mensaje": "El código de escenario no corresponde a la forma de cálculo registrada en RTU."
+        },
+        {
+            "codigo": "FEL_RCP493",
+            "validacion": "No está presenta la marca Exp=SI el tipo de DTE es FPEC o FCPC en la casilla ClasificaciónEmisor=’Intermediario’ el tipo de frase es 11 y el código de escenario es diferente de 2.",
+            "mensaje": "El código de escenario no corresponde para la Exportación del Régimen Pecuario."
+        },
+        {
+            "codigo": "FEL_RCP494",
+            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FPEC o FCPC se encuentra la casilla ClasificaciónEmisor=’Intermediario’ el tipo de frase es 11 y el código de escenario es igual a 2 y la forma de cálculo (Régimen Pecuario y forma de pago del impuesto es el 10% sobre las utilidades) no corresponde a la registrada en RTU.",
+            "mensaje": "El código de escenario no corresponde a la forma de cálculo registrada en RTU."
+        },
+        {
+            "codigo": "FEL_RCP495",
+            "validacion": "No está presente la marca Exp=SI y no está presente la Casilla ClasificacionEmisor y el tipo de frase 11 código de escenario 1 no está presente para los DTE FPEC Y FCPC.",
+            "mensaje": "Error. El código de escenario no corresponde para la exportación del Régimen Pecuario."
+        },
+        {
+            "codigo": "FEL_RCP496",
+            "validacion": "No está presente la marca Exp=SI y no está presente la Casilla ClasificacionEmisor y el tipo de frase 10 codigo de escenario 1 no está presente para los DTE FARP Y FCRP.",
+            "mensaje": "Error. El código de escenario no corresponde para la exportación del Régimen Primario.Se envía un DTE que no corresponde según el establecimiento."
+        },
+        {
+            "codigo": "FEL_RCP497",
+            "validacion": "Se envía un DTE que no corresponde según el establecimiento.",
+            "mensaje": "Error. El DTE no corresponde para el régimen del establecimiento."
+        },
+        {
+            "codigo": "FEL_RCP498",
+            "validacion": "El tipo de DTE es FEPE y el ID Receptor es un NIT de organización empresa.",
+            "mensaje": "Error. El ID Receptor no puede ser Jurídica."
+        },
+        {
+            "codigo": "FEL_RCP499",
+            "validacion": "Se incluye la casilla “DestinodelaVenta” la afiliación del contribuyente es PRI y el valor de la casilla es diferente de. 1.Supermercado. 2.Mercado cantonal. 3.Mercado municipal. 4.Centro de acopio. 5.Exportación. 6.Restaurante. 7. Organización de Padres de Familia",
+            "mensaje": "Error. El destino de la venta no es correcto para el Régimen del Contribuyente."
+        },
+        {
+            "codigo": "FEL_RCP500",
+            "validacion": "Se incluye la casilla “DestinodelaVenta” la afiliación del contribuyente es PEC y el valor de la casilla es diferente de. 1.Supermercado. 2.Mercado cantonal. 3.Mercado municipal. 4.Centro de acopio. 5.Exportación en pie. 6.Intermediación de productos bovinos. 7.Restaurante. 8.Organización de Padres de Familia",
+            "mensaje": "Error. El destino de la venta no es correcto para el Régimen del Contribuyente."
+        },
+        {
+            "codigo": "FEL_RCP501",
+            "validacion": "Se incluye la casilla Exportación=’SI’ el tipo de DTE es FPEC y FCPC y la casilla DestinodelaVenta es diferente de =’Exportación en pie’",
+            "mensaje": "Error. El destino de la venta no es correcto para una exportación."
+        },
+        {
+            "codigo": "FEL_RCP504",
+            "validacion": "Se incluye la casilla Exportación=’SI’ el tipo de DTE es FARP y FRCP y la casilla DestinodelaVenta es diferente de =’Exportación’",
+            "mensaje": "Error. El destino de la venta no es correcto para una exportación."
+        },
+        {
+            "codigo": "FEL_RCP505",
+            "validacion": "El Tipo de DTE es FEPE y la casilla es diferente de “B”.",
+            "mensaje": "Error. El tipo de DTE únicamente puede facturar bienes."
+        },
+        {
+            "codigo": "FEL_RCP506",
+            "validacion": "El contenido de la casilla es diferente a la multiplicación de la casilla Gran Total por 1.5%.",
+            "mensaje": "Error. El valor de la casilla “ICT a Retener” es erróneo."
         }
     ]
 }

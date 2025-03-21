@@ -330,12 +330,36 @@
             "textoAColocar": "Exenta del IVA (art. 7 literal “h” o “i” Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
           },
           {
+            "codigoEscenario": 32,
+            "escenario": "Contratos Leasing Dec. 2-2021 por Arrendadadoras relacionados a vehículos eléctricos, vehículo de hidrógeno, sistemas de transporte eléctrico teleférico, funicular, tren eléctrico, tren ligero, tranvía o trolebús, cargador para vehículo eléctrico y de hidrógeno, motor eléctrico para vehículo eléctrico y de hidrógeno, batería para motor eléctrico y de hidrógeno.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Exenta del IVA (art. 8 Dec. 40-2022 Ley Inc. Mov. Eléctrica)"
+          },
+          {
             "codigoEscenario": 33,
             "escenario": "Ingresos no afectos, obtenidos en concepto de cuotas cuyo destino específicamente para cubrir gastos comunes de administración, mantenimiento, reparaciones, de servicios generales y primas de seguros de edificios, efectuados por los condóminos.",
             "incluyeIVA": false,
       "contieneResolucion": false,
       "contieneFechaResolucion": false,
             "textoAColocar": "No afecto al IVA (Fuera del hecho generador art. 3, Ley del IVA)"
+          },
+          {
+            "codigoEscenario": 34,
+            "escenario": "Bienes para la atención al cáncer. Las compras de medicamentos, tecnologías, equipamiento, insumos y material médico-quirúrgico necesarios para brindar la atención integral a pacientes oncológicos que realice el Ministerio de Salud Pública y Asistencia Social, Instituto Guatemalteco de Seguridad Social y Unidad Nacional de Oncología Pediátrica y otras entidades públicas.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Bienes para la atención al cáncer. Exenta del IVA (Art. 41 Ley para la Atención Integral del Cáncer)"
+          },
+          {
+            "codigoEscenario": 35,
+            "escenario": "Donaciones para la atención al cáncer. Las donaciones de medicamentos, tecnologías, equipamiento, insumos y material médico-quirúrgico necesarios para brindar la atención integral a pacientes oncológicos para el Ministerio de Salud Pública y Asistencia Social, Instituto Guatemalteco de Seguridad Social y Unidad Nacional de Oncología Pediátrica y otras entidades públicas.",
+            "incluyeIVA": false,
+      "contieneResolucion": false,
+      "contieneFechaResolucion": false,
+            "textoAColocar": "Donaciones para la atención al cáncer. Exenta del IVA (Art. 41 Ley para la Atención Integral del Cáncer)"
           }
 
 
