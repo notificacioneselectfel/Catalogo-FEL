@@ -145,7 +145,7 @@
             "mensaje": "El Tipo de Frase debe estar presente para el Tipo de DTE"
         },
         {
-            "codigo": "FEL_INF319",
+            "codigo": "FEL_RCP319",
             "validacion": "Está presente en el XML un tipo de frase no requerido para el “Tipo de DTE”.",
             "mensaje": "El Tipo de Frase no debe de estar presente para el Tipo de DTE"
         },
@@ -580,12 +580,12 @@
             "mensaje": "Código de Unidad Gravable no existe en el catálogo para Tasa Municipal."
         },
         {
-            "codigo": "FEL_RCP525",
+            "codigo": "FEL_RCP119",
             "validacion": "(El CATÁLOGO DE COMPLEMENTOS DISPONIBLES PARA CADA TIPO DE DTE indica que, para el tipo de DTE, un determinado complemento es requerido) y (el citado complemento está vacío)",
             "mensaje": "Un complemento requerido está ausente en el DTE."
         },
         {
-            "codigo": "FEL_SEC526",
+            "codigo": "FEL_RCP120",
             "validacion": "(El CATÁLOGO DE COMPLEMENTOS DISPONIBLES PARA CADA TIPO DE DTE indica que, para el tipo de DTE, un determinado complemento no corresponde) y (el citado complemento está lleno)",
             "mensaje": "Un complemento no corresponde que esté presente en el DTE."
         },
@@ -846,7 +846,7 @@
         },
         {
             "codigo": "FEL_RCP487",
-            "validacion": "El tipo de DTE es FPEC o FCPC y el tipo de frase es 11 y el código de escenario se incluyen más de una vez.",
+            "validacion": "Está presente en el XML más de una vez el mismo tipo de frase.",
             "mensaje": "El tipo de frase y escenario solo pueden incluirse una vez en el XML."
         },
         {
@@ -876,7 +876,7 @@
         },
         {
             "codigo": "FEL_RCP494",
-            "validacion": "La Marca Exp=SI está presente el tipo de DTE es igual a FPEC o FCPC se encuentra la casilla ClasificaciónEmisor=’Intermediario’ el tipo de frase es 11 y el código de escenario es igual a 2 y la forma de cálculo (Régimen Pecuario y forma de pago del impuesto es el 10% sobre las utilidades) no corresponde a la registrada en RTU.",
+            "validacion": "El tipo de DTE es igual a FPEC o FCPC se encuentra la casilla ClasificaciónEmisor=’Intermediario’ el tipo de frase es 11 y el código de escenario es igual a 2 y la forma de cálculo (Régimen Pecuario y forma de pago del impuesto es el 10% sobre las utilidades) no corresponde a la registrada en RTU.",
             "mensaje": "El código de escenario no corresponde a la forma de cálculo registrada en RTU."
         },
         {
@@ -905,29 +905,39 @@
             "mensaje": "Error. El destino de la venta no es correcto para el Régimen del Contribuyente."
         },
         {
-            "codigo": "FEL_RCP500",
+            "codigo": "FEL_RCP120",
             "validacion": "Se incluye la casilla “DestinodelaVenta” la afiliación del contribuyente es PEC y el valor de la casilla es diferente de. 1.Supermercado. 2.Mercado cantonal. 3.Mercado municipal. 4.Centro de acopio. 5.Exportación en pie. 6.Intermediación de productos bovinos. 7.Restaurante. 8.Organización de Padres de Familia",
             "mensaje": "Error. El destino de la venta no es correcto para el Régimen del Contribuyente."
         },
         {
-            "codigo": "FEL_RCP501",
+            "codigo": "FEL_RCP121",
             "validacion": "Se incluye la casilla Exportación=’SI’ el tipo de DTE es FPEC y FCPC y la casilla DestinodelaVenta es diferente de =’Exportación en pie’",
             "mensaje": "Error. El destino de la venta no es correcto para una exportación."
         },
         {
-            "codigo": "FEL_RCP504",
+            "codigo": "FEL_RCP124",
             "validacion": "Se incluye la casilla Exportación=’SI’ el tipo de DTE es FARP y FRCP y la casilla DestinodelaVenta es diferente de =’Exportación’",
             "mensaje": "Error. El destino de la venta no es correcto para una exportación."
         },
         {
-            "codigo": "FEL_RCP505",
+            "codigo": "FEL_RCP125",
             "validacion": "El Tipo de DTE es FEPE y la casilla es diferente de “B”.",
             "mensaje": "Error. El tipo de DTE únicamente puede facturar bienes."
         },
         {
-            "codigo": "FEL_RCP506",
+            "codigo": "FEL_RCP126",
             "validacion": "El contenido de la casilla es diferente a la multiplicación de la casilla Gran Total por 1.5%.",
             "mensaje": "Error. El valor de la casilla “ICT a Retener” es erróneo."
+        },
+        {
+            "codigo": "FEL_RCP127",
+            "validacion": "Se incluye la casilla “ClasificacionEmisor” la afiliación del contribuyente es PEC y el valor de la casilla es diferente de la característica especial y clasificación que tiene registrada en su RTU es diferente de Intermediario Bovino.",
+            "mensaje": "Error. La Clasificación no es correcta según su RTU."
+        },
+        {
+            "codigo": "FEL_RCP128",
+            "validacion": "Se incluye la casilla “ClasificacionEmisor” la afiliación del contribuyente es diferente de PEC.",
+            "mensaje": "Error. No debe de incluir la casilla."
         }
     ]
 }
