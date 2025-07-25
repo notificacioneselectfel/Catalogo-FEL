@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cdp="http://www.sat.gob.gt/face2/ComplementoDetalleDeProductos/0.1.0" targetNamespace="	" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DetalleProductos">
+		<xs:annotation>
+			<xs:documentation>Agrupa la informacion del complemento de Detallde de productos</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ItemDetalleProductos" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NoItem" use="required">
+								<xs:annotation>
+									<xs:documentation>No. del Item del detalle de productos para bebidas.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:positiveInteger">
+										<xs:minInclusive value="1"/>
+										<xs:maxInclusive value="9999"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="ClaseDeBebida">
+								<xs:annotation>
+									<xs:documentation>Indica la clase de la bebidsa.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string" minOccurs="0">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="700"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="MarcaDeBebida">
+								<xs:annotation>
+									<xs:documentation>Indica la marca de la bebidsa.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string" minOccurs="0">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="150"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="NoResolucionAutorizacion" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>El número de resolución relacionado con la transacción.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string" minOccurs="0">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="70"/>
+										<xs:whiteSpace value="collapse"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="CapacidadEnvase" type="cdp:NumeroNDecimales" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Capacidad del envase en ml relacionado con la transacción.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="TotalCajas" type="cdp:NumeroNDecimales" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Total de cajas relacionado con la transacción.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="TotalEnvases" type="cdp:NumeroNDecimales" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Total de envases relacionado con la transacción.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="PrecioVentaSugerido" type="cdp:NumeroNDecimales" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>El precio de venta sugerido en quetzales relacionado con la transacción.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="ImpuestoBebidasAlcoholicas" type="cdp:NumeroNDecimales" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Impuesto de bebidas alcoholicas relacionado con la transacción. </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="cdp:Version" use="required" fixed="1"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="Version">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,3}">
+				<xs:annotation>
+					<xs:documentation>por ejemplo. x , donde x  es  numero entero de 0 a 999</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NumeroNDecimales" final="">
+		<xs:annotation>
+			<xs:documentation>Acepta cantidades mayores a 0</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0"/>
+			<xs:fractionDigits value="10"/>
+			<xs:totalDigits value="22"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
+

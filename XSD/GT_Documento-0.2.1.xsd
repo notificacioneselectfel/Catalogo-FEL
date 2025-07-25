@@ -127,6 +127,7 @@
 																	<xs:restriction base="xs:string">
 																		<xs:enumeration value="APP"/>
 																		<xs:enumeration value="AV"/>
+																		<xs:enumeration value="APPVOZ"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -210,6 +211,18 @@
 																		<xs:enumeration value="EXI"/>
 																		<xs:enumeration value="PRI"/> <!-- Primario -->
 																		<xs:enumeration value="PEC"/> <!-- Pecuario -->
+																		<xs:enumeration value="OMI"/> <!-- Omiso -->
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="AfiliacionOmiso">
+																<xs:annotation>
+																	<xs:documentation>De acuerdo al Régimen que tenga registrado el contribuyente, se refiere a que puede ser General, Pequeño Contribuyente, Pequeño Contribuyente Electronico, Agropecuario, Agropecuario Electrónico. Utilizado para documentos sin restricción por omisos.</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="GEN"/>
+																		<xs:enumeration value="PEQ"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
