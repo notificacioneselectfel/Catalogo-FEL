@@ -27,6 +27,13 @@
 															<xs:documentation>Agrupa los datos generales del DTE.</xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Idp" type="dte:datosGeneralesIDPType" minOccurs="0"><!-- NUEVO -->
+																	<xs:annotation>
+																		<xs:documentation>Agrupa los datos para emitir la boleta de despacho IDP.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
 															<xs:attribute name="Tipo" use="required">
 																<xs:annotation>
 																	<xs:documentation>Código que indica si el DTE es una factura, una nota de crédito, una nota de débito, un recibo, etc.</xs:documentation>
@@ -60,6 +67,7 @@
 																		<xs:enumeration value="FCRP"/> <!-- Factura Cambiaria Contribuyente Régimen Primario -->
 																		<xs:enumeration value="FPEC"/> <!-- Factura Contribuyente Régimen Pecuario -->
 																		<xs:enumeration value="FCPC"/> <!-- Factura Cambiaria Contribuyente Régimen Pecuario-->
+																		<xs:enumeration value="BIDP"/> <!-- Boleta de despacho-->
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -434,6 +442,16 @@
 																					<xs:restriction base="dte:NumeroNDecimales"/>
 																				</xs:simpleType>
 																			</xs:element>
+																			<xs:element name="Observaciones" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation />
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:maxLength value="50"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
 																			<xs:element name="Precio" type="dte:NumeroNDecimales" id="Precio">
 																				<xs:annotation>
 																					<xs:documentation>PrecioUnitario multiplicado por CantidadItem. </xs:documentation>
@@ -509,6 +527,22 @@
 																						</xs:element>
 																					</xs:sequence>
 																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="Afecto" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Indica si deberá realizar el cálculo del IDP correspondiente.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="SI"/>
+																						<xs:enumeration value="NO"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="Idp" type="dte:NumeroNDecimales" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Cálculo por la cantidad y la tasa de IDP correspondiente.</xs:documentation>
+																				</xs:annotation>
 																			</xs:element>
 																			<xs:element name="Total" type="dte:NumeroNDecimales">
 																				<xs:annotation>
@@ -806,6 +840,13 @@
 			<xs:pattern value="(([1-9])+([0-9])*([0-9]|K))$"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="tipoNITTransportista">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="18"/>
+			<xs:pattern value="((([1-9])+([0-9])*([0-9]|K))|(([1-9]+[0-9]){12,13})|^([A-Z0-9&amp;%-/#=]{3,18}))$"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="tipoDireccion">
 		<xs:sequence>
 			<xs:element name="Direccion">
@@ -859,6 +900,154 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<!-- IDP -->
+	<xs:complexType name="datosGeneralesIDPType">
+		<xs:attribute name="Litoral" use="required">
+			<xs:annotation>
+				<xs:documentation>Lista (Norte, Sur, Central)</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Terminal" use="required">
+			<xs:annotation>
+				<xs:documentation>Aparece en el combo únicamente las terminales pertenecientes a la litoral seleccionada y donde el NIT emisor, tenga operaciones.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Placa" use="required">
+			<xs:annotation>
+				<xs:documentation>Placa del vehículo de transporte.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:maxLength value="10"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="LicenciaTransporte" use="required">
+			<xs:annotation>
+				<xs:documentation>Licencia o autorización del transporte provista por el ministerio de Energía y Minas.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="200"/>
+					<xs:whiteSpace value="replace"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Numerodeviaje" use="required">
+			<xs:annotation>
+				<xs:documentation/>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:maxLength value="50"/>
+					<xs:whiteSpace value="replace"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Direcciondeentrega" use="required">
+			<xs:annotation>
+				<xs:documentation />
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<!-- <xs:whiteSpace value="collapse"/> -->
+					<xs:maxLength value="500"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Origendespacho" use="required">
+			<xs:annotation>
+				<xs:documentation>Codigo para: 1. Importaciones, 2. Compras locales, 3. Transferencias de entrada, 4. Degradaciones, 5. Resolución por variaciones positivas</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Destinodespacho" use="required">
+			<xs:annotation>
+				<xs:documentation>Codigo para: 1. Venta local, 2. Exportaciones, 3. Transferencias de salida, 4. Degradaciones, 5. Reexportaciones, 6. Variaciones negativas, 7. Nacionalización</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1" />
+					<xs:maxInclusive value="7"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Procedencia" use="required">
+			<xs:annotation>
+				<xs:documentation>1. Nacional, 2. Importado</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="2"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="IDTransportista" use="required">
+			<xs:annotation>
+				<xs:documentation>Id de la persona que conduce el transporte el cual traslada la o las mercancías.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:maxLength value="18"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="TipoDocumentoIdentificacion" use="required" >
+			<xs:annotation>
+				<xs:documentation>El tipo de documento que registra.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="dte:tipoDocumentoID">
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Nombrepiloto" use="required">
+			<xs:annotation>
+				<xs:documentation>Colocará en automático el nombre cuando corresponda a un NIT o CUI y si es extranjero dejará el espacio para colocarlo.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:whiteSpace value="collapse"/>
+					<xs:maxLength value="50"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+
+	<xs:simpleType name="tipoDocumentoID">
+		<xs:annotation>
+			<xs:documentation>Catálogo para tipo de documento</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10"/>
+			<xs:enumeration value="CUI"/>
+			<xs:enumeration value="NIT"/>
+			<xs:enumeration value="Extranjero"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- IDP -->
 	<xs:simpleType name="tipoMoneda">
 		<xs:annotation>
 			<xs:documentation>ISO 4217</xs:documentation>

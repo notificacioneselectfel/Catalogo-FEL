@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:glp="http://www.sat.gob.gt/face2/ComplementoGasLicuadoPetroleo/0.1.0"
+	targetNamespace="http://www.sat.gob.gt/face2/ComplementoGasLicuadoPetroleo/0.1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="GasLicuadoPetroleo">
+		<xs:annotation>
+			<xs:documentation>Definición Global de complemento de Gas licuado de petróleo</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Items">
+					<xs:annotation>
+						<xs:documentation>Items del complemento a base del detalle del DTE.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Item" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PesoTara" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													El peso tara del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="PesoBruto" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													El peso bruto del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="PesoNeto" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													El peso neto del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="DensidadOBS" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													La densidad del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Temperatura" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													La temperatura del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Gravedad60" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													La Gravedad del producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="GalonesRemitidos" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													Galones remitidos producto que traslada la unidad de transporte.
+												</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+
+										<!-- Segunda parte items -->
+										<!-- <xs:element name="Descripcion" type="glp:IDPDescripcionType" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Código de la descripción del producto seleccionada en el item del detalle relacionado.</xs:documentation>
+											</xs:annotation>
+										</xs:element> -->
+										<xs:element name="CantidadGalonesAmbiente" type="glp:NumeroNDecimales">
+											<xs:annotation>
+												<xs:documentation>Cantidad galones ambiente</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Orden" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													El numero de orden del despacho del producto.
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:integer">
+													<xs:minInclusive value="0" />
+													<xs:totalDigits value="20" />
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="CantidadGalones60F" type="glp:NumeroNDecimales" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>Cantidad galones a 60 grados farenheit.</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="Duca" minOccurs="1">
+											<xs:annotation>
+												<xs:documentation>
+													El numero de la DUCA de la cual se descargara de la cuenta corriente dicho despacho.
+												</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:maxLength value="100"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="NumeroLinea" use="required">
+							<xs:annotation>
+								<xs:documentation>Número secuencial según las filas que contenga.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NumeroLineaMatch" use="required">
+							<xs:annotation>
+								<xs:documentation>Número relacional con la línea del detalle del DTE.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="1" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Totales">
+					<xs:complexType>
+						<xs:annotation>
+							<xs:documentation>Elemento con todos los totales del complemento.</xs:documentation>
+						</xs:annotation>
+						<xs:sequence>
+							<xs:element name="TotalGalonesRemitidos" type="glp:NumeroNDecimales">
+								<xs:annotation>
+									<xs:documentation>Es la suma de la columna galones remitidos.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Version" type="glp:VersionType" use="required" fixed="1" />
+		</xs:complexType>
+	</xs:element>
+
+	
+	<xs:simpleType name="VersionType">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{1,3}">
+				<xs:annotation>
+					<xs:documentation>por ejemplo. x , donde x es numero entero de 0 a 999</xs:documentation>
+				</xs:annotation>
+			</xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="IDPDescripcionType">
+		<xs:annotation>
+			<xs:documentation>Catálogo de productos: 9. Gas licuado de petróleo a granel, 10. Gas licuado petróleo carburación
+			</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="10"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NumeroDosDecimales" final="">
+		<xs:annotation>
+			<xs:documentation>Acepta cantidades mayores a 0</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0" />
+			<xs:fractionDigits value="2" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="NumeroNDecimales" final="">
+		<xs:annotation>
+			<xs:documentation>Acepta cantidades mayores a 0</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:decimal">
+			<xs:minInclusive value="0" />
+			<xs:fractionDigits value="10" />
+			<xs:totalDigits value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
