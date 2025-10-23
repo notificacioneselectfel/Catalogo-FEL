@@ -18,7 +18,7 @@
 				<xs:element name="NombreConsignatarioODestinatario" minOccurs="1">
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
-							<xs:maxLength value="70"/>
+							<xs:maxLength value="300"/>
 							<xs:minLength value="1"/>
 						</xs:restriction>
 					</xs:simpleType>
@@ -30,7 +30,7 @@
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:minLength value="1"/>
-							<xs:maxLength value="70"/>
+							<xs:maxLength value="300"/>
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
@@ -110,7 +110,9 @@
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="SerieDocumentoOrigen" minOccurs="0">
-					<xs:annotation><xs:documentation>Se forma con los primeros 8 dígitos hexadecimales del UUID, de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: dbb51ae2</xs:documentation></xs:annotation>
+					<xs:annotation>
+						<xs:documentation>Se forma con los primeros 8 dígitos hexadecimales del UUID, de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: dbb51ae2</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:string">
 							<xs:whiteSpace value="collapse"/>
@@ -120,7 +122,9 @@
 					</xs:simpleType>
 				</xs:element>
 				<xs:element name="NumeroDocumentoOrigen" minOccurs="0">
-					<xs:annotation><xs:documentation>Se forma con el equivalente en números decimales de los dígitos hexadecimales del UUID, a partir de la posición 9 hasta la posición 16 (excluyendo los guiones “-“), de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: 979518519</xs:documentation></xs:annotation>
+					<xs:annotation>
+						<xs:documentation>Se forma con el equivalente en números decimales de los dígitos hexadecimales del UUID, a partir de la posición 9 hasta la posición 16 (excluyendo los guiones “-“), de izquierda a derecha, de tal forma que queda estructurado como se describe a continuación: De un UUID Original: dbb51ae2-3a62-4437-b8e9-42ecfb761156, el valor resultante será: 979518519</xs:documentation>
+					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:positiveInteger">
 							<xs:minInclusive value="1"/>
@@ -137,6 +141,18 @@
 						</xs:restriction>
 					</xs:simpleType>
 				</xs:element>
+				<xs:element name="fechaExportacion" minOccurs="0">
+					<xs:simpleType>
+						<xs:annotation>
+							<xs:documentation>Fecha de emisión del documento al cual se le está aplicando la constancia.</xs:documentation>
+						</xs:annotation>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="\d{2}[/]\d{2}[/]\d{4}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="viaTransporte" type="cex:viaTransporteType" minOccurs="0"/>
+				<xs:element name="aduanaSalida" type="xs:string" minOccurs="0"/>
 			</xs:sequence>
 			<xs:attribute name="Version" type="cex:VersionType" use="required" fixed="1"/>
 		</xs:complexType>
@@ -162,7 +178,8 @@
 		<xs:annotation>
 			<xs:documentation>Catálogo Edifact</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:token">
+		<xs:restriction base="xs:string">
+    		<xs:pattern value="[^\\s]*"/> <!-- Disallows all whitespace characters -->
 			<xs:enumeration value="EXW"/>
 			<xs:enumeration value="FCA"/>
 			<xs:enumeration value="FAS"/>
@@ -176,6 +193,48 @@
 			<xs:enumeration value="DAT"/>
 			<xs:enumeration value="DPU"/>
 			<xs:enumeration value="ZZZ"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="viaTransporteType">
+		<xs:annotation>
+			<xs:documentation>Catálogo de vía de transporte</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+    		<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows all whitespace characters -->
+			<xs:enumeration value="Aérea"/>
+			<xs:enumeration value="Marítima"/>
+			<xs:enumeration value="Terrestre"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="aduanaSalidaType">
+		<xs:annotation>
+			<xs:documentation>Catálogo aduana de salida</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+    		<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows all whitespace characters -->
+			<xs:enumeration value="APM Terminals"/>
+			<xs:enumeration value="Central de Aviación"/>
+			<xs:enumeration value="Central de Guatemala"/>
+			<xs:enumeration value="El Carmen"/>
+			<xs:enumeration value="El Ceibo"/>
+			<xs:enumeration value="Express Aéreo"/>
+			<xs:enumeration value="Fardos Postales"/>
+			<xs:enumeration value="Integrada Agua Caliente"/>
+			<xs:enumeration value="Integrada Corinto"/>
+			<xs:enumeration value="Integrada El Florido"/>
+			<xs:enumeration value="La Ermita"/>
+			<xs:enumeration value="La Mesilla"/>
+			<xs:enumeration value="Melchor de Mencos"/>
+			<xs:enumeration value="Pedro de Alvarado"/>
+			<xs:enumeration value="Puerto Barrios"/>
+			<xs:enumeration value="Puerto Quetzal"/>
+			<xs:enumeration value="San Cristobal"/>
+			<xs:enumeration value="SantoTomás de Castilla"/>
+			<xs:enumeration value="Tecún Uman I"/>
+			<xs:enumeration value="Tecún Uman II"/>
+			<xs:enumeration value="Tikal"/>
+			<xs:enumeration value="Valle Nuevo"/>
+			<xs:enumeration value="Vehículos"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>

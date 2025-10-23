@@ -69,11 +69,11 @@
 										</xs:element>
 
 										<!-- Segunda parte items -->
-										<!-- <xs:element name="Descripcion" type="glp:IDPDescripcionType" minOccurs="1">
+										<xs:element name="Descripcion" type="glp:IDPDescripcionType" minOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Código de la descripción del producto seleccionada en el item del detalle relacionado.</xs:documentation>
+												<xs:documentation>Descripción del producto seleccionada.</xs:documentation>
 											</xs:annotation>
-										</xs:element> -->
+										</xs:element>
 										<xs:element name="CantidadGalonesAmbiente" type="glp:NumeroNDecimales">
 											<xs:annotation>
 												<xs:documentation>Cantidad galones ambiente</xs:documentation>
@@ -110,29 +110,19 @@
 											</xs:simpleType>
 										</xs:element>
 									</xs:sequence>
+									<xs:attribute name="NumeroLinea" use="required">
+										<xs:annotation>
+											<xs:documentation>Número secuencial según las filas que contenga.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:integer">
+												<xs:minInclusive value="1" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:attribute name="NumeroLinea" use="required">
-							<xs:annotation>
-								<xs:documentation>Número secuencial según las filas que contenga.</xs:documentation>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:integer">
-									<xs:minInclusive value="1" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:attribute>
-						<xs:attribute name="NumeroLineaMatch" use="required">
-							<xs:annotation>
-								<xs:documentation>Número relacional con la línea del detalle del DTE.</xs:documentation>
-							</xs:annotation>
-							<xs:simpleType>
-								<xs:restriction base="xs:integer">
-									<xs:minInclusive value="1" />
-								</xs:restriction>
-							</xs:simpleType>
-						</xs:attribute>
 					</xs:complexType>
 				</xs:element>
 				<xs:element name="Totales">
@@ -167,12 +157,13 @@
 	
 	<xs:simpleType name="IDPDescripcionType">
 		<xs:annotation>
-			<xs:documentation>Catálogo de productos: 9. Gas licuado de petróleo a granel, 10. Gas licuado petróleo carburación
+			<xs:documentation>Catálogo de productos: 9. Gas licuado de petróleo a granel, 11. Gas licuado petróleo carburación, 10. Gas licuado de petróleo propagno uso doméstico
 			</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:integer">
-			<xs:enumeration value="9"/>
-			<xs:enumeration value="10"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gas licuado de petróleo a granel"/>
+			<xs:enumeration value="Gas licuado de petróleo propagno uso doméstico"/>
+			<xs:enumeration value="Gas licuado petróleo carburación"/>
 		</xs:restriction>
 	</xs:simpleType>
 

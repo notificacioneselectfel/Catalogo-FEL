@@ -40,7 +40,7 @@
 										<!-- Segunda parte items -->
 										<xs:element name="Descripcion" type="ayg:IDPDescripcionType" minOccurs="1">
 											<xs:annotation>
-												<xs:documentation>Código de la descripción seleccionada en el item del detalle relacionado.</xs:documentation>
+												<xs:documentation>Descripción del producto seleccionada.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="CantidadGalonesAmbiente" type="ayg:NumeroNDecimales" >
@@ -82,16 +82,6 @@
 									<xs:attribute name="NumeroLinea" use="required">
 										<xs:annotation>
 											<xs:documentation>Número secuencial según las filas que contenga.</xs:documentation>
-										</xs:annotation>
-										<xs:simpleType>
-											<xs:restriction base="xs:integer">
-												<xs:minInclusive value="1"/>
-											</xs:restriction>
-										</xs:simpleType>
-									</xs:attribute>
-									<xs:attribute name="NumeroLineaMatch" use="required">
-										<xs:annotation>
-											<xs:documentation>Número relacional con la línea del detalle de la factura.</xs:documentation>
 										</xs:annotation>
 										<xs:simpleType>
 											<xs:restriction base="xs:integer">
@@ -153,24 +143,22 @@
 	<xs:simpleType name="IDPDescripcionType">
 		<xs:annotation>
 			<xs:documentation>Catálogo de productos: 1. Gasolina superior, 2. Gasolina regular, 3. Gasolina de aviación, 4. Diésel, 5. Gas Oil, 6. Kerosina (DPK), (Avjet, turbo fuel), 
-				7. Nafta, 8. Fuel Oil (Bunker C), 11. Petróleo crudo usado como combustible,
-				12. Otros combustibles derivados del petróleo, 13. Asfaltos, 14. Exento, 15. Diésel bajo en azufre
+				7. Nafta, 8. Fuel Oil (Bunker C), 12. Petróleo crudo usado como combustible,
+				13. Otros combustibles derivados del petróleo, 14. Asfaltos
 			</xs:documentation>
 		</xs:annotation>
-		<xs:restriction base="xs:integer">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-			<xs:enumeration value="3"/>
-			<xs:enumeration value="4"/>
-			<xs:enumeration value="5"/>
-			<xs:enumeration value="6"/>
-			<xs:enumeration value="7"/>
-			<xs:enumeration value="8"/>
-			<xs:enumeration value="11"/>
-			<xs:enumeration value="12"/>
-			<xs:enumeration value="13"/>
-			<xs:enumeration value="14"/>
-			<xs:enumeration value="15"/>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gasolina superior"/>
+			<xs:enumeration value="Gasolina regular"/>
+			<xs:enumeration value="Gasolina de aviación"/>
+			<xs:enumeration value="Diésel"/>
+			<xs:enumeration value="Gas Oil"/>
+			<xs:enumeration value="Kerosina (DPK), (Avjet, turbo fuel)"/>
+			<xs:enumeration value="Nafta"/>
+			<xs:enumeration value="Fuel Oil (Bunker C)"/>
+			<xs:enumeration value="Petróleo crudo usado como combustible"/>
+			<xs:enumeration value="Otros combustibles derivados del petróleo"/>
+			<xs:enumeration value="Asfaltos"/>
 		</xs:restriction>
 	</xs:simpleType>
 

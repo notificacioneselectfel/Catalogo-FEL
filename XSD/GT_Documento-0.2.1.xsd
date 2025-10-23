@@ -51,12 +51,12 @@
 																		<xs:enumeration value="RECI"/>
 																		<xs:enumeration value="NDEB"/>
 																		<xs:enumeration value="NCRE"/>
-																		<xs:enumeration value="FACA"/>
-																		<xs:enumeration value="FCCA"/>
-																		<xs:enumeration value="FAPE"/>
-																		<xs:enumeration value="FCPE"/>
-																		<xs:enumeration value="FAAE"/>
-																		<xs:enumeration value="FCAE"/>
+																		<!-- <xs:enumeration value="FACA"/> -->
+																		<!-- <xs:enumeration value="FCCA"/> -->
+																		<!-- <xs:enumeration value="FAPE"/> -->
+																		<!-- <xs:enumeration value="FCPE"/> -->
+																		<!-- <xs:enumeration value="FAAE"/> -->
+																		<!-- <xs:enumeration value="FCAE"/> -->
 																		<xs:enumeration value="CIVA"/>
 																		<xs:enumeration value="CAIS"/>
 																		<xs:enumeration value="NEV"/>
@@ -68,6 +68,16 @@
 																		<xs:enumeration value="FPEC"/> <!-- Factura Contribuyente Régimen Pecuario -->
 																		<xs:enumeration value="FCPC"/> <!-- Factura Cambiaria Contribuyente Régimen Pecuario-->
 																		<xs:enumeration value="BIDP"/> <!-- Boleta de despacho-->
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+															<xs:attribute name="EmisionUbicacionTemporal">
+																<xs:annotation>
+																	<xs:documentation>Indica si el establecimiento se encuentra en una ubicación temporal</xs:documentation>
+																</xs:annotation>
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="SI"/>
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -212,14 +222,15 @@
 																		<xs:enumeration value="GEN"/>
 																		<xs:enumeration value="EXE"/>
 																		<xs:enumeration value="PEQ"/>
-																		<xs:enumeration value="PEE"/>
-																		<xs:enumeration value="AGR"/>
-																		<xs:enumeration value="AGE"/>
+																		<!-- <xs:enumeration value="PEE"/> -->
+																		<!-- <xs:enumeration value="AGR"/> -->
+																		<!-- <xs:enumeration value="AGE"/> -->
 																		<xs:enumeration value="ECA"/>
 																		<xs:enumeration value="EXI"/>
 																		<xs:enumeration value="PRI"/> <!-- Primario -->
 																		<xs:enumeration value="PEC"/> <!-- Pecuario -->
 																		<xs:enumeration value="OMI"/> <!-- Omiso -->
+																		<xs:enumeration value="IDP"/> <!-- Impuesto a los Derivados de Petróleo -->
 																	</xs:restriction>
 																</xs:simpleType>
 															</xs:attribute>
@@ -252,7 +263,7 @@
 														</xs:annotation>
 														<xs:complexType>
 															<xs:sequence>
-																<xs:element name="DireccionReceptor" type="dte:tipoDireccion" minOccurs="0">
+																<xs:element name="DireccionReceptor" type="dte:tipoDireccionReceptor" minOccurs="0">
 																	<xs:annotation>
 																		<xs:documentation>Agrupa los datos de dirección del receptor.</xs:documentation>
 																	</xs:annotation>
@@ -534,8 +545,8 @@
 																				</xs:annotation>
 																				<xs:simpleType>
 																					<xs:restriction base="xs:string">
-																						<xs:enumeration value="SI"/>
-																						<xs:enumeration value="NO"/>
+																						<xs:enumeration value="Si"/>
+																						<xs:enumeration value="No"/>
 																					</xs:restriction>
 																				</xs:simpleType>
 																			</xs:element>
@@ -900,25 +911,105 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+	<xs:complexType name="tipoDireccionReceptor">
+		<xs:sequence>
+			<xs:element name="Direccion">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:maxLength value="200"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="CodigoPostal" type="xs:integer" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Municipio" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Departamento" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="100"/>
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="Pais" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation/>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="dte:tipoCodigoPais">
+						<xs:whiteSpace value="collapse"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
 	<!-- IDP -->
+	<xs:simpleType name="stringTransportista">
+		<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:minLength value="1"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="datosGeneralesIDPType">
+		<xs:sequence>
+			<xs:element name="Terminal" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Aparece en el combo únicamente las terminales pertenecientes a la litoral seleccionada y donde el NIT emisor, tenga operaciones.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="codigo" type="xs:string" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Transportista" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Debera ingresar los datos del transportista.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="dte:stringTransportista">
+							<xs:attribute name="Id" type="xs:string" />
+							<xs:attribute name="TipoDocumento" type="xs:string" />
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
 		<xs:attribute name="Litoral" use="required">
 			<xs:annotation>
 				<xs:documentation>Lista (Norte, Sur, Central)</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Terminal" use="required">
-			<xs:annotation>
-				<xs:documentation>Aparece en el combo únicamente las terminales pertenecientes a la litoral seleccionada y donde el NIT emisor, tenga operaciones.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1"/>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
+					<xs:enumeration value="Norte"/>
+					<xs:enumeration value="Sur"/>
+					<xs:enumeration value="Central"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -930,18 +1021,6 @@
 				<xs:restriction base="xs:string">
 					<xs:whiteSpace value="collapse"/>
 					<xs:maxLength value="10"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="LicenciaTransporte" use="required">
-			<xs:annotation>
-				<xs:documentation>Licencia o autorización del transporte provista por el ministerio de Energía y Minas.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:minLength value="1"/>
-					<xs:maxLength value="200"/>
-					<xs:whiteSpace value="replace"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -971,23 +1050,33 @@
 		</xs:attribute>
 		<xs:attribute name="Origendespacho" use="required">
 			<xs:annotation>
-				<xs:documentation>Codigo para: 1. Importaciones, 2. Compras locales, 3. Transferencias de entrada, 4. Degradaciones, 5. Resolución por variaciones positivas</xs:documentation>
+				<xs:documentation>Valor para: 1. Importaciones, 2. Compras locales, 3. Transferencias de entrada, 4. Degradaciones, 5. Resolución por variaciones positivas</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1"/>
-					<xs:maxInclusive value="5"/>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
+					<xs:enumeration value="Importaciones"/>
+					<xs:enumeration value="Compras locales"/>
+					<xs:enumeration value="Transferencias de entrada"/>
+					<xs:enumeration value="Degradaciones"/>
+					<xs:enumeration value="Resolución por variaciones positivas"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 		<xs:attribute name="Destinodespacho" use="required">
 			<xs:annotation>
-				<xs:documentation>Codigo para: 1. Venta local, 2. Exportaciones, 3. Transferencias de salida, 4. Degradaciones, 5. Reexportaciones, 6. Variaciones negativas, 7. Nacionalización</xs:documentation>
+				<xs:documentation>Valor para: 1. Venta local, 2. Exportaciones, 3. Transferencias de salida, 4. Degradaciones, 5. Reexportaciones, 6. Variaciones negativas, 7. Nacionalización</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1" />
-					<xs:maxInclusive value="7"/>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
+					<xs:enumeration value="Venta local"/>
+					<xs:enumeration value="Exportaciones"/>
+					<xs:enumeration value="Transferencias de salida"/>
+					<xs:enumeration value="Degradaciones"/>
+					<xs:enumeration value="Reexportaciones"/>
+					<xs:enumeration value="Variaciones negativas"/>
+					<xs:enumeration value="Nacionalización"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -996,41 +1085,10 @@
 				<xs:documentation>1. Nacional, 2. Importado</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
-				<xs:restriction base="xs:integer">
-					<xs:minInclusive value="1"/>
-					<xs:maxInclusive value="2"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="IDTransportista" use="required">
-			<xs:annotation>
-				<xs:documentation>Id de la persona que conduce el transporte el cual traslada la o las mercancías.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
 				<xs:restriction base="xs:string">
-					<xs:whiteSpace value="collapse"/>
-					<xs:maxLength value="18"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="TipoDocumentoIdentificacion" use="required" >
-			<xs:annotation>
-				<xs:documentation>El tipo de documento que registra.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="dte:tipoDocumentoID">
-					<xs:whiteSpace value="collapse"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Nombrepiloto" use="required">
-			<xs:annotation>
-				<xs:documentation>Colocará en automático el nombre cuando corresponda a un NIT o CUI y si es extranjero dejará el espacio para colocarlo.</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:whiteSpace value="collapse"/>
-					<xs:maxLength value="50"/>
+					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
+					<xs:enumeration value="Nacional"/>
+					<xs:enumeration value="Importado"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -1045,6 +1103,17 @@
 			<xs:enumeration value="CUI"/>
 			<xs:enumeration value="NIT"/>
 			<xs:enumeration value="Extranjero"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="stringNombreTransportista">
+		<xs:annotation>
+			<xs:documentation>Catálogo para tipo de documento</xs:documentation>
+		</xs:annotation>
+			<xs:restriction base="xs:string">
+			<xs:whiteSpace value="collapse"/>
+			<xs:minLength value="1"/>
+			<xs:maxLength value="50"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<!-- IDP -->
@@ -1096,6 +1165,7 @@
 			<xs:documentation>Código de País ISO 3166-1</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
+			<xs:pattern value="[^\\s]*"/>
 			<xs:enumeration value="AD"/>
 			<xs:enumeration value="AE"/>
 			<xs:enumeration value="AF"/>
