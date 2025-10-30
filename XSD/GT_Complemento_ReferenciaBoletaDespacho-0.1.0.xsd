@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:rbd="http://www.sat.gob.gt/face2/ComplementoReferenciaBoletaDespacho/0.1.0"
+	targetNamespace="http://www.sat.gob.gt/face2/ComplementoReferenciaBoletaDespacho/0.1.0"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="ReferenciaBoletaDespacho">
+		<xs:annotation>
+			<xs:documentation>Agrupa la informacion del documento original BIDP al cual hace referencia esta factura.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="Version" type="xs:decimal" use="required">
+				<xs:annotation>
+					<xs:documentation>Indica la version de este complemento.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="NumeroAutorizacion" use="required">
+				<xs:annotation>
+					<xs:documentation>Deberá de ingresar el numero de autorización de la boleta de despacho</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:whiteSpace value="collapse"/>
+						<xs:pattern
+							value="[0-9A-F]{8}-([0-9A-F]{4}-){3}[0-9A-F]{12}|([1-2]{1}[0-9]{3}-[1-9]{1}[0-9]{0,2}-[1-9]{1}[0-9]{0,6}-[1-9]{1}[0-9]{0,6})|([0-9]{4}-[0-9]{1}-[0-9]{1,6}-[0-9]{1,6})"
+						/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="FechaEmision" type="xs:date" use="required">
+				<xs:annotation>
+					<xs:documentation>Deberá de ingresar la fecha de emisión de la boleta de despacho.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
