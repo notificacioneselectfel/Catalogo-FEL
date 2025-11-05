@@ -200,41 +200,10 @@
 			<xs:documentation>Catálogo de vía de transporte</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-    		<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows all whitespace characters -->
+    		<xs:pattern value="[^\\s]*"/> <!-- Disallows all whitespace characters -->
 			<xs:enumeration value="Aérea"/>
 			<xs:enumeration value="Marítima"/>
 			<xs:enumeration value="Terrestre"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="aduanaSalidaType">
-		<xs:annotation>
-			<xs:documentation>Catálogo aduana de salida</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-    		<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows all whitespace characters -->
-			<xs:enumeration value="APM Terminals"/>
-			<xs:enumeration value="Central de Aviación"/>
-			<xs:enumeration value="Central de Guatemala"/>
-			<xs:enumeration value="El Carmen"/>
-			<xs:enumeration value="El Ceibo"/>
-			<xs:enumeration value="Express Aéreo"/>
-			<xs:enumeration value="Fardos Postales"/>
-			<xs:enumeration value="Integrada Agua Caliente"/>
-			<xs:enumeration value="Integrada Corinto"/>
-			<xs:enumeration value="Integrada El Florido"/>
-			<xs:enumeration value="La Ermita"/>
-			<xs:enumeration value="La Mesilla"/>
-			<xs:enumeration value="Melchor de Mencos"/>
-			<xs:enumeration value="Pedro de Alvarado"/>
-			<xs:enumeration value="Puerto Barrios"/>
-			<xs:enumeration value="Puerto Quetzal"/>
-			<xs:enumeration value="San Cristobal"/>
-			<xs:enumeration value="SantoTomás de Castilla"/>
-			<xs:enumeration value="Tecún Uman I"/>
-			<xs:enumeration value="Tecún Uman II"/>
-			<xs:enumeration value="Tikal"/>
-			<xs:enumeration value="Valle Nuevo"/>
-			<xs:enumeration value="Vehículos"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
