@@ -981,7 +981,7 @@
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:string">
-							<xs:attribute name="codigo" type="xs:string" />
+							<xs:attribute name="codigo" type="xs:string" use="required"/>
 						</xs:extension>
 					</xs:simpleContent>
 				</xs:complexType>
@@ -1165,7 +1165,7 @@
 			<xs:documentation>Código de País ISO 3166-1</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:pattern value="[^\\s]*"/>
+			<xs:pattern value="[^\s]*"/>
 			<xs:enumeration value="AD"/>
 			<xs:enumeration value="AE"/>
 			<xs:enumeration value="AF"/>

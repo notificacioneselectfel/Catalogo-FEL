@@ -100,14 +100,22 @@
 										<xs:element name="Duca" minOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-													El numero de la DUCA de la cual se descargara de la cuenta corriente dicho despacho.
+												El numero de la DUCA de la cual se descargara de la cuenta corriente dicho despacho.
 												</xs:documentation>
 											</xs:annotation>
-											<xs:simpleType>
-												<xs:restriction base="xs:string">
-													<xs:maxLength value="100"/>
-												</xs:restriction>
-											</xs:simpleType>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="glp:DucaType">  
+														<xs:attribute name="codigo" use="required">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:maxLength value="25"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 									<xs:attribute name="NumeroLinea" use="required">
@@ -185,6 +193,12 @@
 			<xs:minInclusive value="0" />
 			<xs:fractionDigits value="10" />
 			<xs:totalDigits value="30" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="DucaType" final="">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
