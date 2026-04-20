@@ -1472,12 +1472,9 @@
 	</xs:simpleType>
 	<xs:simpleType name="CodigoProducto">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="CGP10LBS"/>
-			<xs:enumeration value="CGP20LBS"/>
-			<xs:enumeration value="CGP25LBS"/>
-			<xs:enumeration value="CGP35LBS"/>
-			<xs:enumeration value="CGP100LBS"/>
 			<xs:enumeration value="GALDIESEL"/>
+			<xs:enumeration value="GALSUPER"/>
+			<xs:enumeration value="GALREGULAR"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="DestinoDeLaVentaPrimario">
