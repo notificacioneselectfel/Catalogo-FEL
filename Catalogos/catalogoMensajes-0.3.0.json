@@ -1,7 +1,7 @@
 {
    "Cabecera":{
       "Nombre":"FEL-CATALOGO-MENSAJES",
-      "Ultima Actualizacion":"04/04/2025"
+      "Ultima Actualizacion":"02/12/2024"
    },
    "Contenido":[
       {
@@ -48,6 +48,56 @@
          "codigo":"FEL_GEN103",
          "validacion":"No se encuentra presente el nodo de firma del certificador",
          "mensaje":"Validar que la firma del certificador este correcta"
+      },
+      {
+         "codigo":"FEL_GEN110",
+         "validacion":"Ocurrió un error al momento de realizar el registro del documento en el modulo de anulación extemporánea",
+         "mensaje":"La anulación extemporánea no fue procesada."
+      },
+      {
+         "codigo":"FEL_RCP9",
+         "validacion":"el tipo de DTE es diferente de los permitidos según la matriz 2.5.1.1, la casilla afiliaciónIVA contiene valor “OMI”, se encuentra activo en el MiniRTU y cuenta con estado Inactivo por suspensión del artículo 120; si el campo afiliaciónOmiso contiene valor “GEN” , o si el campo afiliaciónOmiso contiene valor “PEQ”  y la casilla contiene un Régimen del IVA al cual NO se le permite emitir el Tipo de DTE según la matriz “Tipos de DTE por cada afiliación del IVA” (2.5.1).",
+         "mensaje":"Error. El Tipo de DTE no aplica para esta afiliación del IVA."
+      },
+      {
+         "codigo":"FEL_RCP106",
+         "validacion":"Se envía un código de producto y el tipo de DTE es diferente de FACT, FCAM, NCRE, NDEB.",
+         "mensaje":"Error. El código de producto no debe estar presente para el tipo de DTE enviado."
+      },
+      {
+         "codigo":"FEL_RCP107",
+         "validacion":"Se envía el código de producto GALDIESEL, GALSUPER y GALREGULAR y el NIT EMISOR no se encuentra dentro de los autorizados por el Ministerio de Energía y Minas como importadores de Diesel y gasolina.",
+         "mensaje":"Error. No se debe de consignar el código de producto."
+      },
+      {
+         "codigo":"FEL_RCP108",
+         "validacion":"El código de producto es GALSUPER, GALREGULAR y GALDIESEL y el tipo de frase 9 y código escenario 18 y 19 no se encuentra presente.",
+         "mensaje":"Error. El “Tipo de Frase”: 9 debe estar presente para el DTE que tiene los códigos de productos."
+      },
+      {
+         "codigo":"FEL_RCP109",
+         "validacion":"Se envía el código de producto GALDIESEL y el código de unidad gravable para el impuesto IDP es diferente de 4 o el código de producto GALSUPER y el código de unidad gravable para el impuesto IDP es diferente de 1 o el código de producto GALREGULAR y el código de unidad gravable para el impuesto IDP es diferente de 2.",
+         "mensaje":"Error. El código de producto no debe estar presente para esta unidad gravable del impuesto IDP."
+      },
+      {
+         "codigo":"FEL_RCP111",
+         "validacion":"Para todos los DTE el dato consignado en el campo Id extranjero coincide con algún NIT o CUI existente.",
+         "mensaje":"Error. El ID Receptor Extranjero no puede ser un NIT o CUI existente."
+      },
+      {
+         "codigo":"FEL_RCP116",
+         "validacion":"El tipo de DTE es FEPE y su única clasificación registrada en RTU es productor.",
+         "mensaje":"Error. El tipo de documento no aplica para la clasificación de productor."
+      },
+      {
+         "codigo":"FEL_RCP179",
+         "validacion":"El NIT no está activo en el Registro de Emisores FEL.",
+         "mensaje":"El NIT no corresponde a un Emisor Activo del Régimen FEL."
+      },
+      {
+         "codigo":"FEL_RCP226",
+         "validacion":"El contenido de la casilla es diferente del resultado de la siguiente operación: casilla “Precio” menos las casillas “descuento“ y “otros descuentos” y el resultado de ellas dividido entre el factor 1.12; cuando la casilla “Código de la Unidad Gravable” es igual a 1.",
+         "mensaje":"Error. Monto Gravable calculado incorrectamente para el IVA."
       },
       {
          "codigo":"FEL_INF300",
@@ -151,7 +201,7 @@
       },
       {
          "codigo":"FEL_RCP320",
-         "validacion":"Está presente en el XML un Tipo de Frase Requerido u Opcional para el Tipo de DTE y el Código de Escenario para ese Tipo de Frase no existe en el catálogo.",
+         "validacion":"Está presente en el XML un “Tipo de Frase” Requerido u Opcional para el “Tipo de DTE y el “Código de Escenario” para ese “Tipo de Frase” no existe en el catálogo. Si el tipo de DTE incluye la frase tipo 1, 2 o 3, deberá validarse que el tipo de frase y escenario correspondan a la información de las frases permitidas del contribuyente según el Minirtu. **condición pecuario Si el tipo de DTE es FEPE, se incluye la frase tipo 12 escenario 1, la afiliación es pecuario; o Si el tipo de DTE es FEPE, se incluye la frase tipo 12 escenario 2, la afiliación es primario. Si se incluye la casilla de emisiontemporal=si y no se incluye la frase escenario 14; o no se incluye la casilla de emisontemporal=si y se incluye la frase tipo 9 escenario 14.",
          "mensaje":"El código de escenario no existe para el Tipo de Frase: xxx"
       },
       {
@@ -671,7 +721,7 @@
       },
       {
          "codigo":"FEL_RCP432",
-         "validacion":"El Tipo de DTE es RANT incluye el tipo de frase 9 y los códigos de escenario son diferentes de 9 y 10.",
+         "validacion":"El Tipo de DTE es RANT incluye el tipo de frase 9 y los códigos de escenario son diferentes de 9, 10 y 14.",
          "mensaje":"Error. El código de escenario no corresponde para el tipo de DTE."
       },
       {
@@ -845,6 +895,16 @@
          "mensaje":"El código de escenario no corresponde para el tipo de DTE."
       },
       {
+         "codigo":"FEL_RCP485",
+         "validacion":"Se envía un DTE de tipo RANT y no corresponde el establecimiento para la actividad comercial según la tabla 2.2.3.2 o la actividad económica del establecimiento según la tabla 2.2.3.4.",
+         "mensaje":"El DTE no corresponde para la actividad económica o comercial del establecimiento."
+      },
+      {
+         "codigo":"FEL_RCP473",
+         "validacion":"Se incluye la frase de tipo 8 “Frases de exento de ISR” y código de escenario 1 “Exenciones generales universidades”; y: El “Tipo de DTE” es distinto de estos: “FACT”, “FCAM”, “RECI”, “RDON” ó el “Régimen” es distinto de “GEN”; y: El “Tipo de personería” del emisor es distinta de: 740 o 2744",
+         "mensaje":"Error. El Código de Escenario 1 para el Tipo “Frases de exento del ISR” no corresponde para: el tipo de DTE, el Régimen del IVA o la Personería."
+      },
+      {
          "codigo":"FEL_RCP487",
          "validacion":"El tipo de DTE es diferente de RANT y está presente en el XML más de una vez el mismo tipo de frase.",
          "mensaje":"El tipo de frase y escenario solo pueden incluirse una vez en el XML."
@@ -921,8 +981,8 @@
       },
       {
          "codigo":"FEL_RCP126",
-         "validacion":"El contenido de la casilla es diferente a la multiplicación de la casilla Gran Total por 1.5%; o la casilla TotalMenosRetenciones es diferente de la resta Gran Total menos RetencionICT.",
-         "mensaje":"Error. El total de la retención ICT o el total menos la retención es erróneo."
+         "validacion":"El contenido de la casilla es diferente a la multiplicación de la casilla Gran Total por 1.5%.",
+         "mensaje":"Error. El valor de la casilla “ICT a Retener” es erróneo."
       },
       {
          "codigo":"FEL_RCP127",
@@ -933,6 +993,56 @@
          "codigo":"FEL_RCP128",
          "validacion":"Se incluye la casilla “ClasificacionEmisor” la afiliación del contribuyente es diferente de PEC.",
          "mensaje":"Error. No debe de incluir la casilla."
+      },
+      {
+         "codigo":"FEL_RCP139",
+         "validacion":"La clase de bebida es diferente de “Alcoholes” y “Base de Alcohol” y no se consigna contenido en las casillas de detalle de productos.",
+         "mensaje":"Error. Las casillas deben contener información."
+      },
+      {
+         "codigo":"FEL_RCP141",
+         "validacion":"El contenido de la casilla “Impuesto de bebidas alcohólicas” es diferente del producto (multiplicación) de las casillas: •  Total de envases •  Precio de venta sugerido(Q) •  Porcentaje sobre el monto gravable (de acuerdo al “Código de unidad gravable” que corresponda)",
+         "mensaje":"Error. Monto del Impuesto Bebidas Alcohólicas calculado incorrectamente."
+      },
+      {
+         "codigo":"FEL_RCP143",
+         "validacion":"Se incluye el complemento “Detalle de productos” y el contenido de la casilla “moneda” es diferente a “USD”.",
+         "mensaje":"Error. El tipo de moneda debe ser dólares, para DTE con detalle de productos."
+      },
+      {
+         "codigo":"FEL_RCP118",
+         "validacion":"Existe un tipo de origen de despacho que no corresponde para la generación del impuesto IDP.",
+         "mensaje":"Error. El tipo de origen no corresponde la generación del impuesto IDP."
+      },
+      {
+         "codigo":"FEL_RCP122",
+         "validacion":"Existe un tipo de procedencia de despacho que no corresponde para la generación del impuesto IDP.",
+         "mensaje":"Error. El tipo de procedencia no corresponde la generación del impuesto IDP."
+      },
+      {
+         "codigo":"FEL_RCP123",
+         "validacion":"Existe un tipo de destino de despacho que no corresponde para la generación del impuesto IDP.",
+         "mensaje":"Error. El tipo de destino del despacho no corresponde la generación del impuesto IDP."
+      },
+      {
+         "codigo":"FEL_RCP137",
+         "validacion":"Existe un tipo de emisor y receptor no corresponde para la generación del impuesto IDP.",
+         "mensaje":"Error. El tipo de mismo nit y receptor no corresponde la generación del impuesto IDP."
+      },
+      {
+         "codigo":"FEL_ANU145",
+         "validacion":"El contenido de la casilla fue incluido dentro del formulario 0611 de la SAT, la cual coincide además en las casillas: NIT Emisor, ID del Receptor, Monto Total, Fecha y Hora de Emisión",
+         "mensaje":"Error. El DTE a anular fue incluido en el formulario 0611 de la SAT, por lo cual no se puede anular."
+      },
+      {
+         "codigo":"FEL_ANU147",
+         "validacion":"El contenido de la casilla corresponde a un DTE que fue incluido en una gestión de traspaso de vehículo con estado finalizado.",
+         "mensaje":"Error. El DTE está ingresado en una gestión de traspaso de vehículo con estado finalizado, no se permite la anulación."
+      },
+      {
+         "codigo":"FEL_RCP420",
+         "validacion":"Se incluye la casilla “Emisión en ubicación temporal” y el contenido de la casilla “Tipo de DTE” es distinto de los tipos permitidos:  FACT, FCAM, FPEQ, FCAP, RANT, NCRE, Y NDEB.",
+         "mensaje":"Error. La casilla  de ubicación temporal no debe estar presente para este tipo de documento."
       }
    ]
 }
