@@ -71,13 +71,13 @@
       },
       {
          "codigo":"FEL_RCP108",
-         "validacion":"El código de producto es GALSUPER, GALREGULAR y GALDIESEL y el tipo de frase 9 y código escenario 18 y 19 no se encuentra presente.",
-         "mensaje":"Error. El “Tipo de Frase”: 9 debe estar presente para el DTE que tiene los códigos de productos."
+         "validacion":"Se envia el código de producto GALDIESEL y el código de unidad gravable para el impuesto IDP es diferente de 4 o el código de producto GALSUPER y el código de unidad gravable para el impuesto IDP es diferente de 1 o el código de producto GALREGULAR y el código de unidad gravable para el impuesto IDP es diferente de 2. O está presente el código de producto y e código de unidad gravable diferente de 14.",
+         "mensaje":"Error. El código de producto no debe estar presente para esta unidad gravable del impuesto IDP."
       },
       {
          "codigo":"FEL_RCP109",
-         "validacion":"Se envía el código de producto GALDIESEL y el código de unidad gravable para el impuesto IDP es diferente de 4 o el código de producto GALSUPER y el código de unidad gravable para el impuesto IDP es diferente de 1 o el código de producto GALREGULAR y el código de unidad gravable para el impuesto IDP es diferente de 2.",
-         "mensaje":"Error. El código de producto no debe estar presente para esta unidad gravable del impuesto IDP."
+         "validacion":"El código de producto es GALSUPER, GALREGULAR y GALDIESEL y el tipo de frase 9 y código escenario 18 y 19 no se encuentra presente.",
+         "mensaje":"Error. El “Tipo de Frase”: 9 debe estar presente para el DTE que tiene los códigos de productos."
       },
       {
          "codigo":"FEL_RCP111",
@@ -961,8 +961,8 @@
       },
       {
          "codigo":"FEL_RCP499",
-         "validacion":"Se incluye la casilla “DestinodelaVenta” el tipo de documento es distinto de FARP o FRCP, y  el valor de la casilla es diferente de: 1.Supermercado 2.Mercado cantonal 3.Mercado municipal 4.Centro de acopio 5.Exportación 6.Restaurante 7. Organización de Padres de Familia O se incluye la casilla “DestinodelaVenta” el tipo de documento es distinto de FPEC o FCPC, y el valor de la casilla es diferente de: 1.Supermercado 2.Mercado cantonal 3.Mercado municipal 4.Centro de acopio 5.Exportación en pie  6.Restaurante 7.Organización de Padres de Familia ",
-         "mensaje":"Error. El destino de la venta no es correcto para el Régimen del Contribuyente."
+         "validacion":"Se incluye la casilla “DestinodelaVenta” el tipo de documento es distinto de FARP o FRCP, y el valor de la casilla es diferente de: 1.Supermercados 2.Mercados cantonales 3.Mercados municipales 4.Centros de acopio 5.Exportación 6.Restaurantes 7. Comercializador O se incluye la casilla “DestinodelaVenta” el tipo de documento es distinto de FPEC o FCPC, y el valor de la casilla es diferente de: 1.Supermercados 2.Mercados cantonales 3.Mercados municipales 4.Centros de acopio 5.Exportación en pie 6.Restaurantes 7. Crianza 8. Engorde 9. Desarrollo 10. Producción 11. Faenado 12.Sacrificio 13.Transformación 14. Comercializador 15. Intermediarios de productos bovinos",
+         "mensaje":"Error. El destino de la venta no es correcto para el tipo de documento."
       },
       {
          "codigo":"FEL_RCP121",
