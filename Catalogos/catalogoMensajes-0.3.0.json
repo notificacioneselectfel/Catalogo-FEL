@@ -85,6 +85,11 @@
          "mensaje":"Error. El ID Receptor Extranjero no puede ser un NIT o CUI existente."
       },
       {
+         "codigo":"FEL_RCP112",
+         "validacion":"El tipo de DTE es diferente de “FACT”, FCAM, FPEQ Y FCAP y el tipo de frase es 9 y el código de escenario es 15, o el tipo de DTE es diferente de NABN y el tipo de Frase es 9 y el código de escenario es 16 o 17, o el DTE es NABN y el tipo de frase es 9 y no se encuentra presente el código de escenario 16 o 17.",
+         "mensaje":"Error. El código de escenario no corresponde para el tipo de DTE."
+      },
+      {
          "codigo":"FEL_RCP116",
          "validacion":"El tipo de DTE es FEPE y su única clasificación registrada en RTU es productor.",
          "mensaje":"Error. El tipo de documento no aplica para la clasificación de productor."
