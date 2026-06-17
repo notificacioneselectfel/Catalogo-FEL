@@ -1,7 +1,7 @@
 {
     "cabecera": {
         "Nombre": "FEL-CATALOGO-FRASES",
-        "Ultima Actualizacion": "29/10/2025 20:30:00"
+        "Ultima Actualizacion": "25/03/2025 14:30:00"
     },
     "contenido": {
         "tiposFrases": [
@@ -381,6 +381,14 @@
                         "contieneResolucion": false,
                         "contieneFechaResolucion": false,
                         "textoAColocar": "El vendedor o prestador del servicio se negó a emitir la factura correspondiente. (art. 52 Ley del IVA)"
+                    },
+                    {
+                        "codigoEscenario": 2,
+                        "escenario": "Se incluirá la frase el DTE (FESP) cuando se realicen compras a exportadores  de productos agropecuarios , artesanales y productos reciclados  inscritos en SAT, articulo 52 “A“ ley del IVA",
+                        "esPequenoContribuyente": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Vendedor de productos agropecuarios, artesanales y productos reciclados"
                     }
                 ]
             },
@@ -678,6 +686,22 @@
                         "contieneResolucion": false,
                         "contieneFechaResolucion": false,
                         "textoAColocar": "Esta factura incluye apoyo social temporal Decreto Número 11-2026 por un valor de GTQ "
+                    },
+                    {
+                        "codigoEscenario": 20,
+                        "escenario": "DTE (Nota de envío para Régimen Primario y Pecuario): Cuando el contribuyente emite un documento que respalda el traslado de mercancías de un lugar a otro.",
+                        "esRegimenElectronico": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Concluido el traslado de productos, debe emitirse la factura correspondiente"
+                    },
+                    {
+                        "codigoEscenario": 21,
+                        "escenario": "Etanol: El 90% de la mezcla de gasolina incluida en este documento está afecta al IDP (A. G. No. 257- 2025)",
+                        "esRegimenElectronico": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "La gasolina incluida en este documento está afecta al IDP en un 90% (Acuerdo Gubernativo No. 257-2025)"
                     }
                 ]
             }, 

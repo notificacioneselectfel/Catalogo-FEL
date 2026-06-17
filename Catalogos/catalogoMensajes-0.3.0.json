@@ -100,6 +100,16 @@
          "mensaje":"El NIT no corresponde a un Emisor Activo del Régimen FEL."
       },
       {
+         "codigo":"FEL_RCP203",
+         "validacion":"El contenido de esta casilla es diferente al producto (multiplicación) de las dos casillas siguientes: Tasa específica en Q del “Código de la unidad gravable” por el 100% menos el descuento (cuando aplique) por la “Cantidad de Unidades Gravables” [tasa específica * (100%- descuento%) * cantidad de  unidades gravables], Nota: Para el caso distinto de quetzales, deberá realizar la conversión según el tipo de cambio del Banco de Guatemala sobre la tasa específica.",
+         "mensaje":"Error. Monto del Impuesto calculado incorrectamente para Petróleo."
+      },
+      {
+         "codigo":"FEL_RCP204",
+         "validacion":"El código de unidad gravable para el IDP es igual a 15 o 16 y no se encuentra presente el tipo de frase 9 Código de escenario 21.",
+         "mensaje":"Error. El “Tipo de Frase”: 9 debe estar presente para el DTE."
+      },
+      {
          "codigo":"FEL_RCP226",
          "validacion":"El contenido de la casilla es diferente del resultado de la siguiente operación: casilla “Precio” menos las casillas “descuento“ y “otros descuentos” y el resultado de ellas dividido entre el factor 1.12; cuando la casilla “Código de la Unidad Gravable” es igual a 1.",
          "mensaje":"Error. Monto Gravable calculado incorrectamente para el IVA."
