@@ -1150,6 +1150,7 @@
 			<xs:enumeration value="PKR"/>
 			<xs:enumeration value="KPW"/>
 			<xs:enumeration value="JPY"/>
+			<xs:enumeration value="PLN"/> <!-- esloti Polaco - Requerimiento 06052026 -->
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="tipoTipoPersoneria">
@@ -1513,7 +1514,16 @@
 			<xs:enumeration value="Exportación en pie"/> <!-- Pecuario -->
 			<xs:enumeration value="Intermediación de productos bovinos"/>
 			<xs:enumeration value="Restaurante"/>
-			<xs:enumeration value="Organización de Padres de Familia"/>
+			<xs:enumeration value="Comercializador"/>
+			<xs:enumeration value="Crianza"/>
+			<xs:enumeration value="Engorde"/>
+			<xs:enumeration value="Desarrollo"/>
+			<xs:enumeration value="Producción"/>
+			<xs:enumeration value="Faenado"/>
+			<xs:enumeration value="Sacrificio"/>
+			<xs:enumeration value="Transformación"/>
+			<xs:enumeration value="Comercializador"/>
+			<xs:enumeration value="Intermediarios de productos bovinos"/>
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
