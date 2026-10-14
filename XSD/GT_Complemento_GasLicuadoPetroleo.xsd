@@ -97,10 +97,10 @@
 												<xs:documentation>Cantidad galones a 60 grados farenheit.</xs:documentation>
 											</xs:annotation>
 										</xs:element>
-										<xs:element name="Duca" minOccurs="1">
+										<xs:element name="NombreCuentaCorriente" minOccurs="1">
 											<xs:annotation>
 												<xs:documentation>
-												El numero de la DUCA de la cual se descargara de la cuenta corriente dicho despacho.
+												El numero de la cuenta corriente de la cual se descargara de origen del despacho.
 												</xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
@@ -125,6 +125,21 @@
 										<xs:simpleType>
 											<xs:restriction base="xs:integer">
 												<xs:minInclusive value="1" />
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Origendespacho" use="required">
+										<xs:annotation>
+											<xs:documentation>Valor para: 1. Importaciones, 2. Compras locales, 3. Transferencias de entrada, 4. Degradaciones, 5. Resolución por variaciones positivas</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
+												<xs:enumeration value="Importaciones"/>
+												<xs:enumeration value="Compras locales"/>
+												<xs:enumeration value="Transferencias de entrada"/>
+												<xs:enumeration value="Degradaciones"/>
+												<xs:enumeration value="Resolución por variaciones positivas"/>
 											</xs:restriction>
 										</xs:simpleType>
 									</xs:attribute>

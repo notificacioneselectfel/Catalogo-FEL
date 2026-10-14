@@ -1048,21 +1048,6 @@
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
-		<xs:attribute name="Origendespacho" use="required">
-			<xs:annotation>
-				<xs:documentation>Valor para: 1. Importaciones, 2. Compras locales, 3. Transferencias de entrada, 4. Degradaciones, 5. Resolución por variaciones positivas</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
-					<xs:enumeration value="Importaciones"/>
-					<xs:enumeration value="Compras locales"/>
-					<xs:enumeration value="Transferencias de entrada"/>
-					<xs:enumeration value="Degradaciones"/>
-					<xs:enumeration value="Resolución por variaciones positivas"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
 		<xs:attribute name="Destinodespacho" use="required">
 			<xs:annotation>
 				<xs:documentation>Valor para: 1. Venta local, 2. Exportaciones, 3. Transferencias de salida, 4. Degradaciones, 5. Reexportaciones, 6. Variaciones negativas, 7. Nacionalización</xs:documentation>
@@ -1077,18 +1062,6 @@
 					<xs:enumeration value="Reexportaciones"/>
 					<xs:enumeration value="Variaciones negativas"/>
 					<xs:enumeration value="Nacionalización"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="Procedencia" use="required">
-			<xs:annotation>
-				<xs:documentation>1. Nacional, 2. Importado</xs:documentation>
-			</xs:annotation>
-			<xs:simpleType>
-				<xs:restriction base="xs:string">
-					<xs:pattern value="^\S(.*\S)?$"/> <!-- Disallows whitespace characters -->
-					<xs:enumeration value="Nacional"/>
-					<xs:enumeration value="Importado"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -1151,6 +1124,7 @@
 			<xs:enumeration value="KPW"/>
 			<xs:enumeration value="JPY"/>
 			<xs:enumeration value="PLN"/> <!-- esloti Polaco - Requerimiento 06052026 -->
+			<xs:enumeration value="CNY"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="tipoTipoPersoneria">

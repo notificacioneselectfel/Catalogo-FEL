@@ -229,6 +229,7 @@
                                                                     <xs:restriction base="xs:string">
                                                                         <xs:whiteSpace value="collapse" />
                                                                         <xs:enumeration value="CUI" />
+                                                                        <xs:enumeration value="EXT" />
                                                                     </xs:restriction>
                                                                 </xs:simpleType>
                                                             </xs:attribute>
