@@ -1,7 +1,7 @@
 {
   "Cabecera": {
     "Nombre": "FEL-CATALOGO-UNIDADES-GRAVABLES",
-    "Ultima Actualizacion": "23/08/2022 11:00:00"
+    "Ultima Actualizacion": "19/08/2026 12:00:00"
   },
   "Contenido": [
     {
@@ -140,19 +140,51 @@
         },
         {
           "codigoUnidadGravable": 15,
-          "nombreUnidadGravable": "Superior con etanol",
-          "nombreCorto": "Super con etanol",
+          "nombreUnidadGravable": "Gasolina regular con alcohol carburante (etanol)",
+          "nombreCorto": "Gasolina regular con alcohol carburante (etanol)",
           "operaSobreCasilla": "CantidadUnidadesGravables",
-          "factor": 4.70,
+          "factor": 4.6,
           "descuento": 0.1
         },
         {
           "codigoUnidadGravable": 16,
-          "nombreUnidadGravable": "Regular con etanol",
-          "nombreCorto": "Regular con etanol",
+          "nombreUnidadGravable": "Gas con alcohol carburante (etanol) exento",
+          "nombreCorto": "Gas con alcohol carburante (etanol) exento",
           "operaSobreCasilla": "CantidadUnidadesGravables",
-          "factor": 4.60,
-          "descuento": 0.1
+          "factor": 0,
+          "descuento": 0
+        },
+        {
+          "codigoUnidadGravable": 18,
+          "nombreUnidadGravable": "Superior Exento",
+          "nombreCorto": "Superior Exento 0.00",
+          "operaSobreCasilla": "CantidadUnidadesGravables",
+          "factor": 0,
+          "descuento": 0
+        },
+        {
+          "codigoUnidadGravable": 19,
+          "nombreUnidadGravable": "Regular Exento",
+          "nombreCorto": "Regular Exento 0.00",
+          "operaSobreCasilla": "CantidadUnidadesGravables",
+          "factor": 0,
+          "descuento": 0
+        },
+        {
+          "codigoUnidadGravable": 20,
+          "nombreUnidadGravable": "Diesel Exento",
+          "nombreCorto": "Diesel Exento 0.00",
+          "operaSobreCasilla": "CantidadUnidadesGravables",
+          "factor": 0,
+          "descuento": 0
+        },
+        {
+          "codigoUnidadGravable": 21,
+          "nombreUnidadGravable": "Regular con Etanol Exento",
+          "nombreCorto": "Regular con Etanol Exento 0.00",
+          "operaSobreCasilla": "CantidadUnidadesGravables",
+          "factor": 0,
+          "descuento": 0
         }
       ]
     },
@@ -166,7 +198,7 @@
           "operaSobreCasilla": "MontoGravable",
           "factor": 0.1
         },
-		{
+        {
           "codigoUnidadGravable": 2,
           "nombreUnidadGravable": "Tasa Hospedaje Exento Tasa 0",
           "nombreCorto": "Hospedaje Exento 0%",
@@ -237,11 +269,7 @@
         }
       ]
     },
-	
-	
-	
-	
-	{
+    {
       "impuesto": "BEBIDAS ALCOHOLICAS",
       "unidadesGravables": [
         {
@@ -250,51 +278,50 @@
           "nombreCorto": "Cervezas y otras bebidas 6.00%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.06
-
         },
-		{
+        {
           "codigoUnidadGravable": 2,
           "nombreUnidadGravable": "Vinos",
           "nombreCorto": "Vinos 7.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.075
         },
-		{
+        {
           "codigoUnidadGravable": 3,
           "nombreUnidadGravable": "Vino espumoso",
           "nombreCorto": "Vino espumoso 7.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.075
         },
-		{
+        {
           "codigoUnidadGravable": 4,
           "nombreUnidadGravable": "Vino vermouth",
           "nombreCorto": "Vino vermouth 7.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.075
         },
-		{
+        {
           "codigoUnidadGravable": 5,
           "nombreUnidadGravable": "Sidras",
           "nombreCorto": "Sidras 7.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.075
         },
-		{
+        {
           "codigoUnidadGravable": 6,
           "nombreUnidadGravable": "Bebidas alcohólicas destiladas",
           "nombreCorto": "Bebidas alcohólicas destiladas 8.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.085
         },
-		{
+        {
           "codigoUnidadGravable": 7,
           "nombreUnidadGravable": "Bebidas alcohólicas mezcladas",
           "nombreCorto": "Bebidas alcohólicas mezcladas 7.50%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.075
         },
-		{
+        {
           "codigoUnidadGravable": 8,
           "nombreUnidadGravable": "Otras bebidas fermentadas",
           "nombreCorto": "Otras bebidas fermentadas 7.50%",
@@ -303,7 +330,7 @@
         }
       ]
     },
-	{
+    {
       "impuesto": "TABACO",
       "unidadesGravables": [
         {
@@ -312,9 +339,8 @@
           "nombreCorto": "Precio de fábrica por 100%",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 1
-
         },
-		{
+        {
           "codigoUnidadGravable": 2,
           "nombreUnidadGravable": "Precio sugerido al consumidor ",
           "nombreCorto": "Precio sugerido al consumidor por 75%",
@@ -323,7 +349,7 @@
         }
       ]
     },
-		{
+    {
       "impuesto": "CEMENTO",
       "unidadesGravables": [
         {
@@ -332,11 +358,10 @@
           "nombreCorto": "Bolsa de 42.5 kgs Q1.50",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 1.5
-
         }
       ]
     },
-	{
+    {
       "impuesto": "BEBIDAS NO ALCOHOLICAS",
       "unidadesGravables": [
         {
@@ -345,30 +370,29 @@
           "nombreCorto": "Bebidas gaseosas y jarabes Q0.18",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.18
-
         },
-		{
+        {
           "codigoUnidadGravable": 2,
           "nombreUnidadGravable": "Bebidas isotónicas o deportivas",
           "nombreCorto": "Bebidas isotónicas o deportivas Q0.12",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.12
         },
-		{
+        {
           "codigoUnidadGravable": 3,
           "nombreUnidadGravable": "Jugos y néctares",
           "nombreCorto": "Jugos y néctares Q0.10",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.1
         },
-		{
+        {
           "codigoUnidadGravable": 4,
           "nombreUnidadGravable": "Bebidas de yogur",
           "nombreCorto": "Bebidas de yogur Q0.10",
           "operaSobreCasilla": "CantidadUnidadesGravables",
           "factor": 0.1
         },
-		{
+        {
           "codigoUnidadGravable": 5,
           "nombreUnidadGravable": "Agua natural envasada",
           "nombreCorto": "Agua natural envasada Q0.08",
@@ -377,7 +401,7 @@
         }
       ]
     },
-	{
+    {
       "impuesto": "TARIFA PORTUARIA",
       "unidadesGravables": [
         {
@@ -389,7 +413,5 @@
         }
       ]
     }
-	
-	
   ]
 }

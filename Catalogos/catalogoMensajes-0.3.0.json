@@ -110,6 +110,11 @@
          "mensaje":"Error. El “Tipo de Frase”: 9 debe estar presente para el DTE."
       },
       {
+         "codigo":"FEL_RCP205",
+         "validacion":"El NIT emisor no se encuentra en el listado de importadores de gasolinas autorizado por el Ministerio de Energía y Minas y la unidad gravable para el IDP es igual a 2.",
+         "mensaje":"Error. No debe consignarse la unidad gravable gasolina regular."
+      },
+      {
          "codigo":"FEL_RCP226",
          "validacion":"El contenido de la casilla es diferente del resultado de la siguiente operación: casilla “Precio” menos las casillas “descuento“ y “otros descuentos” y el resultado de ellas dividido entre el factor 1.12; cuando la casilla “Código de la Unidad Gravable” es igual a 1.",
          "mensaje":"Error. Monto Gravable calculado incorrectamente para el IVA."
@@ -906,7 +911,7 @@
       },
       {
          "codigo":"FEL_RCP484",
-         "validacion":"El tipo de DTE es diferente de FACT o FCAM y el tipo de frase es 4 y el código de escenario es 36.",
+         "validacion":"El tipo de DTE es diferente de FACT o FCAM y el tipo de frase es 4 y el código de escenario es 36 o El tipo de DTE es FACT, FCAM, NCRE, NDEB, el código de unidad gravable para el IVA es igual a 2 el tipo frase 4 está presente y el código de escenario es diferente de 38, el código de unidad gravable para el IDP es diferente de 18,19, 20 y 21 y el NIT emisor es diferente al listado de importadores de combustibles. o El tipo de DTE es FACT, FCAM, NCRE, NDEB, FPEQ y FCAP, el código de unidad gravable para el IDP es igual a 18,19, 20, 21 y el tipo de frase 9 no está presente o tipo de frase 9 está presente y el código de escenario es distinto de 23. o El tipo DTE es FACT, FCAM, NCRE, NDEB, se incluye la frase tipo 4 escenario 38 pero no se incluye la unidad gravable para el IVA sea igual a 2, o se incluye la frase tipo 9 escenario 23 y no se incluye la unidad gravable 18,19,20,21",
          "mensaje":"El código de escenario no corresponde para el tipo de DTE."
       },
       {
@@ -1058,6 +1063,11 @@
          "codigo":"FEL_RCP420",
          "validacion":"Se incluye la casilla “Emisión en ubicación temporal” y el contenido de la casilla “Tipo de DTE” es distinto de los tipos permitidos:  FACT, FCAM, FPEQ, FCAP, RANT, NCRE, Y NDEB.",
          "mensaje":"Error. La casilla  de ubicación temporal no debe estar presente para este tipo de documento."
+      },
+      {
+         "codigo": "FEL_RCP468",
+         "validacion": "Se incluye la casilla Exportación en el DTE y el contenido de la casilla de Bien o servicio es igual a “S” y no incluye casilla “B” en el mismo DTE, y se incluye en el complemento de Exportaciones el INCOTERM.",
+         "mensaje": "Si se incluye la casilla exportación y es un Servicio la casilla INCOTERM no debe estar presente."
       }
    ]
 }

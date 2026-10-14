@@ -366,6 +366,22 @@
                         "contieneResolucion": false,
                         "contieneFechaResolucion": false,
                         "textoAColocar": "Venta de productos de régimen primario y pecuario no industrializados. Exenta del IVA (art. 7 num. 16 Ley del IVA)"
+                    },
+                    {
+                        "codigoEscenario": 37,
+                        "escenario": "Compras locales y donaciones de vacunas, insumos y equipos para vacunación, Decreto 25-2024, Ley de Vacunación Art 28: Exoneraciones. Las compras, importaciones y donaciones de vacunas, insumos y equipos para vacunación para el Programa de Inmunizaciones del Ministerio de Salud Pública y Asistencia Social (MSPAS) y del Instituto Guatemalteco de Seguridad Social (IGSS), así como otras entidades públicas del sector salud están exentas de impuestos, gravámenes arancelarios o de aduanas. De igual exoneración gozarán las jeringas, cajas de bioseguridad y equipos de cadena de frío y demás insumos y materiales para la vacunación que el sector salud adquiera para este fin.",
+                        "incluyeIVA": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Compras locales y donaciones de vacunas, insumos y equipos para vacunación, Decreto 25-2024, Ley de Vacunación Art 28. Exenta del IVA (art. 28 Ley de vacunación)"
+                    },
+                    {
+                        "codigoEscenario": 38,
+                        "escenario": "Decreto 22-2026 Se incluirá la frase a todas las ventas de derivados de petróleo al vender Diésel, Superior y Regular para los DTE de tipo Factura y Factura Cambiaria. Observación: Dicha frase es obligatoria cuando vengan los códigos de unidad gravables 18,19, 20 y 21.",
+                        "incluyeIVA": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Monto de exención temporal de IVA aplicada: XXXX, según Decreto Número 22-2026"
                     }
                 ]
             },
@@ -697,11 +713,27 @@
                     },
                     {
                         "codigoEscenario": 21,
-                        "escenario": "Etanol: El 90% de la mezcla de gasolina incluida en este documento está afecta al IDP (A. G. No. 257- 2025)",
+                        "escenario": "Etanol: El 90% de la mezcla de gasolina incluida en este documento está afecta al IDP (Ac. Gub. 257-2025 y Ac. Ministerial 333-2026)., para los DTE de tipo Factura y Factura Cambiaria, ",
                         "esRegimenElectronico": false,
                         "contieneResolucion": false,
                         "contieneFechaResolucion": false,
-                        "textoAColocar": "La gasolina incluida en este documento está afecta al IDP en un 90% (Acuerdo Gubernativo No. 257-2025)"
+                        "textoAColocar": "El 90% de la mezcla de gasolina regular incluida en este documento está afecta al IDP (Ac. Gub. 257-2025 y Ac. Ministerial 333-2026)."
+                    },
+                    {
+                        "codigoEscenario": 22,
+                        "escenario": "DTE (Nota de Crédito y Nota de Débito): Cuando la fecha de emisión de la factura origen es posterior a los dos meses",
+                        "esRegimenElectronico": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Documento emitido posterior a los dos meses de la factura, no se reconoce como crédito fiscal, según Art. 17 Ley del IVA"
+                    },
+                    {
+                        "codigoEscenario": 23,
+                        "escenario": "Decreto 22-2026 Se incluirá la frase a todas las ventas de derivados de petróleo respecto a Diésel, Superior y Regular para los DTE de tipo Factura, Factura Cambiaria, Nota de Crédito, Nota de Débito, Factura de Pequeño Contribuyente y Factura Cambiaria de Pequeño Contribuyente. Observación: Dicha frase es obligatoria cuando vengan los códigos de unidad gravables 18,19, 20 y 21.",
+                        "esRegimenElectronico": false,
+                        "contieneResolucion": false,
+                        "contieneFechaResolucion": false,
+                        "textoAColocar": "Monto de exención temporal de IDP aplicada: XXXX, según Decreto Número 22-2026"
                     }
                 ]
             }, 
